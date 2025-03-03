@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Dragonfly">
+      <UniqueIdentifier>{a91a2a8f-a508-4e79-b646-ed1594140e0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dragonfly\Managers">
+      <UniqueIdentifier>{08145a84-5718-4c5f-b271-cb0d3473d235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dragonfly\Events">
+      <UniqueIdentifier>{8ffa9cd5-db87-472b-9455-46797b9709d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dragonfly">
+      <UniqueIdentifier>{9159dddf-5bb9-4086-910f-56c797fb4668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dragonfly\Events">
+      <UniqueIdentifier>{0e3e52dc-8524-41f5-bc3c-ade8b14c4987}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dragonfly\Managers">
+      <UniqueIdentifier>{b0ef32e0-ed58-44a5-87c5-308bdc81a5b4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Animation.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Box.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Clock.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Frame.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Music.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Object.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ObjectList.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sound.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sprite.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\utility.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Vector.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ViewObject.cpp">
+      <Filter>Source Files\Dragonfly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DisplayManager.cpp">
+      <Filter>Source Files\Dragonfly\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameManager.cpp">
+      <Filter>Source Files\Dragonfly\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\InputManager.cpp">
+      <Filter>Source Files\Dragonfly\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LogManager.cpp">
+      <Filter>Source Files\Dragonfly\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Manager.cpp">
+      <Filter>Source Files\Dragonfly\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ResourceManager.cpp">
+      <Filter>Source Files\Dragonfly\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WorldManager.cpp">
+      <Filter>Source Files\Dragonfly\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Event.cpp">
+      <Filter>Source Files\Dragonfly\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EventCollision.cpp">
+      <Filter>Source Files\Dragonfly\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EventKeyboard.cpp">
+      <Filter>Source Files\Dragonfly\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EventMouse.cpp">
+      <Filter>Source Files\Dragonfly\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EventOut.cpp">
+      <Filter>Source Files\Dragonfly\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EventStep.cpp">
+      <Filter>Source Files\Dragonfly\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EventView.cpp">
+      <Filter>Source Files\Dragonfly\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Crate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SceneController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Crate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SceneController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Animation.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Box.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Clock.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Color.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DisplayManager.h">
+      <Filter>Header Files\Dragonfly\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Event.h">
+      <Filter>Header Files\Dragonfly\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EventCollision.h">
+      <Filter>Header Files\Dragonfly\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EventKeyboard.h">
+      <Filter>Header Files\Dragonfly\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EventMouse.h">
+      <Filter>Header Files\Dragonfly\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EventOut.h">
+      <Filter>Header Files\Dragonfly\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EventStep.h">
+      <Filter>Header Files\Dragonfly\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EventView.h">
+      <Filter>Header Files\Dragonfly\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Frame.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WorldManager.h">
+      <Filter>Header Files\Dragonfly\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ResourceManager.h">
+      <Filter>Header Files\Dragonfly\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\InputManager.h">
+      <Filter>Header Files\Dragonfly\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LogManager.h">
+      <Filter>Header Files\Dragonfly\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameManager.h">
+      <Filter>Header Files\Dragonfly\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Manager.h">
+      <Filter>Header Files\Dragonfly\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Music.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Object.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ObjectList.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sound.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sprite.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\utility.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Vector.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ViewObject.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Testing.h">
+      <Filter>Header Files\Dragonfly</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
