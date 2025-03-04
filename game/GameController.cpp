@@ -1,7 +1,7 @@
 #include "GameController.h"
-#include "dragonfly/DisplayManager.h"
+#include "DisplayManager.h"
 #include "Crate.h"
-#include "dragonfly/EventStep.h"
+#include "EventStep.h"
 #include "TowerBase.h"
 
 // Constructor

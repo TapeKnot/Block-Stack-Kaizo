@@ -1,7 +1,7 @@
 #include "GameStart.h"
-#include "dragonfly/EventKeyboard.h"
-#include "dragonfly/WorldManager.h"
-#include "dragonfly/GameManager.h"
+#include "EventKeyboard.h"
+#include "WorldManager.h"
+#include "GameManager.h"
 #include "TowerBase.h"
 #include "Crate.h"
 

@@ -2,7 +2,7 @@
 #ifndef __GAME_CONTROLLER_H__
 #define __GAME_CONTROLLER_H__
 #define GC GameController::getInstance()
-#include "dragonfly/Object.h"
+#include "Object.h"
 #include "Crate.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;

@@ -20,32 +20,32 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Crate.cpp" />
-    <ClCompile Include="..\dragonfly\Animation.cpp" />
-    <ClCompile Include="..\dragonfly\Box.cpp" />
-    <ClCompile Include="..\dragonfly\Clock.cpp" />
-    <ClCompile Include="..\dragonfly\DisplayManager.cpp" />
-    <ClCompile Include="..\dragonfly\Event.cpp" />
-    <ClCompile Include="..\dragonfly\EventCollision.cpp" />
-    <ClCompile Include="..\dragonfly\EventKeyboard.cpp" />
-    <ClCompile Include="..\dragonfly\EventMouse.cpp" />
-    <ClCompile Include="..\dragonfly\EventOut.cpp" />
-    <ClCompile Include="..\dragonfly\EventStep.cpp" />
-    <ClCompile Include="..\dragonfly\EventView.cpp" />
-    <ClCompile Include="..\dragonfly\Frame.cpp" />
-    <ClCompile Include="..\dragonfly\GameManager.cpp" />
-    <ClCompile Include="..\dragonfly\InputManager.cpp" />
-    <ClCompile Include="..\dragonfly\LogManager.cpp" />
-    <ClCompile Include="..\dragonfly\Manager.cpp" />
-    <ClCompile Include="..\dragonfly\Music.cpp" />
-    <ClCompile Include="..\dragonfly\Object.cpp" />
-    <ClCompile Include="..\dragonfly\ObjectList.cpp" />
-    <ClCompile Include="..\dragonfly\ResourceManager.cpp" />
-    <ClCompile Include="..\dragonfly\Sound.cpp" />
-    <ClCompile Include="..\dragonfly\Sprite.cpp" />
-    <ClCompile Include="..\dragonfly\utility.cpp" />
-    <ClCompile Include="..\dragonfly\Vector.cpp" />
-    <ClCompile Include="..\dragonfly\ViewObject.cpp" />
-    <ClCompile Include="..\dragonfly\WorldManager.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Animation.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Box.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Clock.cpp" />
+    <ClCompile Include="..\dragonfly\lib\DisplayManager.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Event.cpp" />
+    <ClCompile Include="..\dragonfly\lib\EventCollision.cpp" />
+    <ClCompile Include="..\dragonfly\lib\EventKeyboard.cpp" />
+    <ClCompile Include="..\dragonfly\lib\EventMouse.cpp" />
+    <ClCompile Include="..\dragonfly\lib\EventOut.cpp" />
+    <ClCompile Include="..\dragonfly\lib\EventStep.cpp" />
+    <ClCompile Include="..\dragonfly\lib\EventView.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Frame.cpp" />
+    <ClCompile Include="..\dragonfly\lib\GameManager.cpp" />
+    <ClCompile Include="..\dragonfly\lib\InputManager.cpp" />
+    <ClCompile Include="..\dragonfly\lib\LogManager.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Manager.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Music.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Object.cpp" />
+    <ClCompile Include="..\dragonfly\lib\ObjectList.cpp" />
+    <ClCompile Include="..\dragonfly\lib\ResourceManager.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Sound.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Sprite.cpp" />
+    <ClCompile Include="..\dragonfly\lib\utility.cpp" />
+    <ClCompile Include="..\dragonfly\lib\Vector.cpp" />
+    <ClCompile Include="..\dragonfly\lib\ViewObject.cpp" />
+    <ClCompile Include="..\dragonfly\lib\WorldManager.cpp" />
     <ClCompile Include="..\game.cpp" />
     <ClCompile Include="..\GameController.cpp" />
     <ClCompile Include="..\GameEnd.cpp" />
@@ -55,34 +55,34 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Crate.h" />
-    <ClInclude Include="..\dragonfly\Animation.h" />
-    <ClInclude Include="..\dragonfly\Box.h" />
-    <ClInclude Include="..\dragonfly\Clock.h" />
-    <ClInclude Include="..\dragonfly\Color.h" />
-    <ClInclude Include="..\dragonfly\DisplayManager.h" />
-    <ClInclude Include="..\dragonfly\Event.h" />
-    <ClInclude Include="..\dragonfly\EventCollision.h" />
-    <ClInclude Include="..\dragonfly\EventKeyboard.h" />
-    <ClInclude Include="..\dragonfly\EventMouse.h" />
-    <ClInclude Include="..\dragonfly\EventOut.h" />
-    <ClInclude Include="..\dragonfly\EventStep.h" />
-    <ClInclude Include="..\dragonfly\EventView.h" />
-    <ClInclude Include="..\dragonfly\Frame.h" />
-    <ClInclude Include="..\dragonfly\GameManager.h" />
-    <ClInclude Include="..\dragonfly\InputManager.h" />
-    <ClInclude Include="..\dragonfly\LogManager.h" />
-    <ClInclude Include="..\dragonfly\Manager.h" />
-    <ClInclude Include="..\dragonfly\Music.h" />
-    <ClInclude Include="..\dragonfly\Object.h" />
-    <ClInclude Include="..\dragonfly\ObjectList.h" />
-    <ClInclude Include="..\dragonfly\ResourceManager.h" />
-    <ClInclude Include="..\dragonfly\Sound.h" />
-    <ClInclude Include="..\dragonfly\Sprite.h" />
-    <ClInclude Include="..\dragonfly\Testing.h" />
-    <ClInclude Include="..\dragonfly\utility.h" />
-    <ClInclude Include="..\dragonfly\Vector.h" />
-    <ClInclude Include="..\dragonfly\ViewObject.h" />
-    <ClInclude Include="..\dragonfly\WorldManager.h" />
+    <ClInclude Include="..\dragonfly\include\Animation.h" />
+    <ClInclude Include="..\dragonfly\include\Box.h" />
+    <ClInclude Include="..\dragonfly\include\Clock.h" />
+    <ClInclude Include="..\dragonfly\include\Color.h" />
+    <ClInclude Include="..\dragonfly\include\DisplayManager.h" />
+    <ClInclude Include="..\dragonfly\include\Event.h" />
+    <ClInclude Include="..\dragonfly\include\EventCollision.h" />
+    <ClInclude Include="..\dragonfly\include\EventKeyboard.h" />
+    <ClInclude Include="..\dragonfly\include\EventMouse.h" />
+    <ClInclude Include="..\dragonfly\include\EventOut.h" />
+    <ClInclude Include="..\dragonfly\include\EventStep.h" />
+    <ClInclude Include="..\dragonfly\include\EventView.h" />
+    <ClInclude Include="..\dragonfly\include\Frame.h" />
+    <ClInclude Include="..\dragonfly\include\GameManager.h" />
+    <ClInclude Include="..\dragonfly\include\InputManager.h" />
+    <ClInclude Include="..\dragonfly\include\LogManager.h" />
+    <ClInclude Include="..\dragonfly\include\Manager.h" />
+    <ClInclude Include="..\dragonfly\include\Music.h" />
+    <ClInclude Include="..\dragonfly\include\Object.h" />
+    <ClInclude Include="..\dragonfly\include\ObjectList.h" />
+    <ClInclude Include="..\dragonfly\include\ResourceManager.h" />
+    <ClInclude Include="..\dragonfly\include\Sound.h" />
+    <ClInclude Include="..\dragonfly\include\Sprite.h" />
+    <ClInclude Include="..\dragonfly\include\Testing.h" />
+    <ClInclude Include="..\dragonfly\include\utility.h" />
+    <ClInclude Include="..\dragonfly\include\Vector.h" />
+    <ClInclude Include="..\dragonfly\include\ViewObject.h" />
+    <ClInclude Include="..\dragonfly\include\WorldManager.h" />
     <ClInclude Include="..\GameController.h" />
     <ClInclude Include="..\GameEnd.h" />
     <ClInclude Include="..\GameStart.h" />
@@ -142,14 +142,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\include;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\dragonfly;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\include;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\include;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\dragonfly;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\include;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\dragonfly;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\include;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

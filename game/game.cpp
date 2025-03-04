@@ -1,7 +1,7 @@
 // Engine includes.
-#include "dragonfly/GameManager.h"
-#include "dragonfly/LogManager.h"
-#include "dragonfly/ResourceManager.h"
+#include "GameManager.h"
+#include "LogManager.h"
+#include "ResourceManager.h"
 
 // Game includes.
 #include "GameStart.h"

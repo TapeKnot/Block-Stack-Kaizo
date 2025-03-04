@@ -1,5 +1,5 @@
-#include "dragonfly/EventStep.h"
-#include "dragonfly/WorldManager.h"
+#include "EventStep.h"
+#include "WorldManager.h"
 #include "GameController.h"
 #include "Crate.h"
 

@@ -1,7 +1,7 @@
 #include "GameEnd.h"
-#include "dragonfly/EventStep.h"
-#include "dragonfly/EventKeyboard.h"
-#include "dragonfly/WorldManager.h"
+#include "EventStep.h"
+#include "EventKeyboard.h"
+#include "WorldManager.h"
 
 #include "GameStart.h"
 

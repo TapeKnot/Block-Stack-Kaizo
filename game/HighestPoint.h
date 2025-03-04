@@ -1,6 +1,6 @@
 #pragma once
 
-#include "dragonfly/ViewObject.h"
+#include "ViewObject.h"
 
 class HighestPoint : public df::ViewObject {
 private:

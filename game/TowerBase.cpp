@@ -1,6 +1,6 @@
-#include "dragonfly/EventStep.h"
-#include "dragonfly/EventOut.h"
-#include "dragonfly/WorldManager.h"
+#include "EventStep.h"
+#include "EventOut.h"
+#include "WorldManager.h"
 
 #include "TowerBase.h"
 #include "GameController.h"
