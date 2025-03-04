@@ -1,3 +1,6 @@
+#pragma once
+#ifndef __CRATE_H__
+#define __CRATE_H__
 #include "dragonfly/Object.h"
 class GameController;
 
@@ -14,8 +17,11 @@ private:
     float m_target_height;
 public:
     Crate();
+    df::Vector getCrateSize() const;
     void step();
     void drop();
     void stack();
     int eventHandler(const df::Event *p_e) override;
 };
+
+#endif

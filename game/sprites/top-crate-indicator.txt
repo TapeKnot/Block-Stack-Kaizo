@@ -1,7 +1,0 @@
-2
-16
-1
--1
-white
-HIGHEST POINT ->
-<- HIGHEST POINT

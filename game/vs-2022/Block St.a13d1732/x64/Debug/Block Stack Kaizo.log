@@ -1,1 +1,7 @@
-﻿
+﻿  game.cpp
+  HighestPoint.cpp
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\HighestPoint.cpp(18,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\HighestPoint.cpp(17,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  TowerBase.cpp
+  Generating Code...
+  Block Stack Kaizo.vcxproj -> C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\vs-2022\x64\Debug\Block Stack Kaizo.exe

@@ -50,7 +50,7 @@
     <ClCompile Include="..\GameController.cpp" />
     <ClCompile Include="..\GameEnd.cpp" />
     <ClCompile Include="..\GameStart.cpp" />
-    <ClCompile Include="..\TopCrateIndicator.cpp" />
+    <ClCompile Include="..\HighestPoint.cpp" />
     <ClCompile Include="..\TowerBase.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +86,7 @@
     <ClInclude Include="..\GameController.h" />
     <ClInclude Include="..\GameEnd.h" />
     <ClInclude Include="..\GameStart.h" />
-    <ClInclude Include="..\TopCrateIndicator.h" />
+    <ClInclude Include="..\HighestPoint.h" />
     <ClInclude Include="..\TowerBase.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

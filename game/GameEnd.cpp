@@ -14,6 +14,8 @@ GameEnd::GameEnd() {
 	// Set object type.
 	setType("GameEnd");
 
+	setAltitude(df::MAX_ALTITUDE);
+
 	setLocation(df::CENTER_CENTER);
 
 	GC.setScrollSpeed(0.0f);

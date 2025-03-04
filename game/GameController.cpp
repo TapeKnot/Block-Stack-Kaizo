@@ -34,7 +34,6 @@ void GameController::reset() {
 
     // Reset tower base
     m_p_tower_base = new TowerBase;
-    m_p_top_crate = m_p_tower_base; // Ensures only the first crate can stack on the tower base.
     m_p_tower_base->setPosition(
         df::Vector(DM.getHorizontal()/2, DM.getVertical() - m_stack_height));
 
@@ -66,11 +65,11 @@ void GameController::setScrollSpeed(float new_speed) {
     m_scroll_speed = new_speed;
 }
 
-df::Object* GameController::getTopCrate() const {
+Crate* GameController::getTopCrate() const {
     return m_p_top_crate;
 }
 
-void GameController::setTopCrate(df::Object* new_crate) {
+void GameController::setTopCrate(Crate* new_crate) {
     m_p_top_crate = new_crate;
 }
 
@@ -91,15 +90,17 @@ int GameController::eventHandler(const df::Event *p_e) {
 
         //printf("Fast Mode: %d\n", m_fast_scroll_mode);
 
-        if (m_p_top_crate->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
-            m_scroll_speed *= 4;
-            m_fast_scroll_mode = true;
+        if (m_p_top_crate != nullptr) {
+            if (m_p_top_crate->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
+                m_scroll_speed *= 4;
+                m_fast_scroll_mode = true;
+            }
+            else if (m_p_top_crate->getPosition().getY() > DM.getVertical() / 2 && m_fast_scroll_mode == true) {
+                m_scroll_speed /= 4;
+                m_fast_scroll_mode = false;
+            }
         }
-        else if (m_p_top_crate->getPosition().getY() > DM.getVertical() / 2 && m_fast_scroll_mode == true) {
-            m_scroll_speed /= 4;
-            m_fast_scroll_mode = false;
-        }
-
+        
         return 1;
     }
 

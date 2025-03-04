@@ -13,6 +13,8 @@ GameStart::GameStart() {
 	// Set object type.
 	setType("GameStart");
 
+	setAltitude(df::MAX_ALTITUDE);
+
 	setLocation(df::CENTER_CENTER);
 }
 

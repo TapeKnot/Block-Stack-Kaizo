@@ -47,6 +47,10 @@ Crate::Crate() {
     
 }
 
+df::Vector Crate::getCrateSize() const {
+    return m_crate_size;
+}
+
 void Crate::drop() {
     m_status = FALLING;
 }
@@ -97,6 +101,16 @@ int Crate::eventHandler(const df::Event *p_e) {
         if (m_status == FALLING) {
             if ((p_collision_event->getObject1() == GC.getTopCrate()) ||
                 (p_collision_event->getObject2() == GC.getTopCrate())) {
+                stack();
+                return 1;
+            }
+            else if ((p_collision_event->getObject1()->getType() == "TowerBase") &&
+                (p_collision_event->getObject2() == this)) {
+                stack();
+                return 1;
+            }
+            else if ((p_collision_event->getObject1() == this) &&
+                (p_collision_event->getObject2()->getType() == "TowerBase")) {
                 stack();
                 return 1;
             }

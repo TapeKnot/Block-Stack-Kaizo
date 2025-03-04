@@ -31,6 +31,7 @@ int loadResources() {
         RM.loadSprite("sprites/game-over-spr.txt", "game-over") == 0 &&
         RM.loadSprite("sprites/game-start-spr.txt", "game-start") == 0 &&
         RM.loadSprite("sprites/insert-coin-spr.txt", "insert-coin") == 0 &&
-        RM.loadSprite("sprites/tower-base-spr.txt", "tower-base") == 0
+        RM.loadSprite("sprites/tower-base-spr.txt", "tower-base") == 0 &&
+        RM.loadSprite("sprites/highest-point-spr.txt", "highest-point") == 0
     ) ? 0 : -1;
 }
