@@ -1,78 +1,112 @@
 #include "Crate.h"
-#include "Event.h"
+#include "dragonfly/Event.h"
+#include "dragonfly/EventCollision.h"
 #include "GameController.h"
-#include "DisplayManager.h"
-#include "EventStep.h"
-#include "EventKeyboard.h"
-#include "EventOut.h"
-#include "WorldManager.h"
+#include "dragonfly/DisplayManager.h"
+#include "dragonfly/EventStep.h"
+#include "dragonfly/EventKeyboard.h"
+#include "dragonfly/EventOut.h"
+#include "dragonfly/WorldManager.h"
+#include "gameEnd.h"
 
 #include <cmath>
 
-Crate::Crate(GameController *p_game_controller) {
+Crate::Crate() {
     // Initialize member variables
     m_status = MOVING;
     m_target_height = DM.getVertical() + 5;
-    m_p_game_controller = p_game_controller;
     
     // Initialize object properties
     setSprite("crate");
+    setType("Crate");
     setSolidness(df::SOFT);
-    setPosition(df::Vector(DM.getHorizontal() / 2, -10));
 
     m_crate_size = df::Vector(
         getAnimation().getSprite()->getWidth() + 1,
-        getAnimation().getSprite()->getHeight()
+        getAnimation().getSprite()->getHeight() + 1
     );
-}
 
-Crate::~Crate() {
-    // Destructor implementation
+    float max_pos = DM.getHorizontal() - (m_crate_size.getX() / 2);
+    float min_pos = 0 + (m_crate_size.getX() / 2);
+
+    float start_pos = rand() % (int)floor(max_pos) + min_pos;
+
+    setPosition(df::Vector(start_pos, DM.getVertical() - 20));
+
+    float start_vel;
+
+    if (rand() % 2 == 1) {
+        start_vel = 1;
+    }
+    else {
+        start_vel = -1;
+    }
+
+    setVelocity(df::Vector(start_vel, 0));
+
+    
 }
 
 void Crate::drop() {
     m_status = FALLING;
 }
 
+void Crate::step() {
+    switch (m_status) {
+    case MOVING: {
+        if (getPosition().getX() >= DM.getHorizontal() - (m_crate_size.getX() / 2)) {
+            setVelocity(df::Vector(-1, getVelocity().getY()));
+        }
+        else if (getPosition().getX() <= 0 + (m_crate_size.getX() / 2)) {
+            setVelocity(df::Vector(1, getVelocity().getY()));
+        }
+        break;
+    }
+    case FALLING: {
+        setVelocity(df::Vector(0, getVelocity().getY() + 0.1));
+        break;
+    }
+    case STACKED:
+        // Crate is stacked, scroll
+        setVelocity(df::Vector(0, GC.getScrollSpeed()));
+        break;
+    }
+}
+
+void Crate::stack() {
+    float target_height = DM.getVertical() - GC.getStackHeight() - m_crate_size.getY() / 2;
+
+    setVelocity(df::Vector(0, 0));
+    setPosition(df::Vector(getPosition().getX(), target_height));
+    m_status = STACKED;
+    GC.successfulDrop(getPosition().getX());
+
+    GC.setTopCrate(this);
+}
+
 int Crate::eventHandler(const df::Event *p_e) {
     // Handle step events
     if (p_e->getType() == df::STEP_EVENT) {
-        const df::EventStep *p_step_event = dynamic_cast<const df::EventStep *>(p_e);
-        switch (m_status) {
-            case MOVING: {
-                // Move crate back and forth
-                float progress = p_step_event->getStepCount() / 60.0f;
-                df::Vector new_position = getPosition();
-                float x_pos = m_crate_size.getX() / 2 + (DM.getHorizontal() - m_crate_size.getX()) * abs(std::fmod(progress, 2) - 1);
-                setPosition(df::Vector(x_pos, DM.getVertical() / 2));
-                break;
-            }
-            case FALLING: {
-                // Handle falling crate
-                float target_height = DM.getVertical() - m_p_game_controller->getStackHeight() - m_crate_size.getY() / 2;
-                bool below_height = getPosition().getY() > target_height;
-                bool within_stack = abs(getPosition().getX() - m_p_game_controller->getStackPosition()) < m_crate_size.getX() / 2;
-                if (below_height && within_stack) {
-                    setVelocity(df::Vector(0, 0));
-                    setPosition(df::Vector(getPosition().getX(), target_height));
-                    m_status = STACKED;
-                    m_p_game_controller->successfulDrop(getPosition().getX());
-                } else {
-                    setVelocity(df::Vector(0, getVelocity().getY() + 0.1));
-                }
-                break;
-            }
-            case STACKED:
-                // Crate is stacked, scroll
-                setVelocity(df::Vector(0, m_p_game_controller->getScrollSpeed()));
-                break;
-        }
-
+        step();
         return 1;
     }
 
+    else if (p_e->getType() == df::COLLISION_EVENT) {
+        const df::EventCollision* p_collision_event = dynamic_cast<const df::EventCollision*>(p_e);
+        
+        if (m_status == FALLING) {
+            if ((p_collision_event->getObject1() == GC.getTopCrate()) ||
+                (p_collision_event->getObject2() == GC.getTopCrate())) {
+                stack();
+                return 1;
+            }
+        }
+
+        return 0;
+    }
+
     // Handle keyboard events
-    if (p_e->getType() == df::KEYBOARD_EVENT) {
+    else if (p_e->getType() == df::KEYBOARD_EVENT) {
         const df::EventKeyboard *p_keyboard_event = dynamic_cast<const df::EventKeyboard *>(p_e);
         if (p_keyboard_event->getKeyboardAction() == df::KEY_PRESSED) {
             if (p_keyboard_event->getKey() == df::Keyboard::SPACE && m_status == MOVING) {
@@ -83,11 +117,14 @@ int Crate::eventHandler(const df::Event *p_e) {
     }
 
     // Handle out-of-bounds events
-    if (p_e->getType() == df::OUT_EVENT) {
-        if (m_status == FALLING) {
-            new Crate(m_p_game_controller);
+    else if (p_e->getType() == df::OUT_EVENT) {
+        if (m_status == FALLING || GC.getTopCrate() == this) {
+            new GameEnd();
         }
+
         WM.markForDelete(this);
+
+        return 1;
     }
 
     return 0;

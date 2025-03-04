@@ -1,4 +1,4 @@
-#include "Object.h"
+#include "dragonfly/Object.h"
 class GameController;
 
 enum Status {
@@ -12,11 +12,10 @@ private:
     df::Vector m_crate_size;
     Status m_status;
     float m_target_height;
-    // The game controller.
-    GameController *m_p_game_controller;
 public:
-    Crate(GameController *p_game_controller);
-    ~Crate();
-    void drop();;
+    Crate();
+    void step();
+    void drop();
+    void stack();
     int eventHandler(const df::Event *p_e) override;
 };

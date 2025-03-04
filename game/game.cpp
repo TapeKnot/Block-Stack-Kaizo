@@ -1,10 +1,10 @@
 // Engine includes.
-#include "GameManager.h"
-#include "LogManager.h"
-#include "ResourceManager.h"
+#include "dragonfly/GameManager.h"
+#include "dragonfly/LogManager.h"
+#include "dragonfly/ResourceManager.h"
 
 // Game includes.
-#include "SceneController.h"
+#include "GameStart.h"
 
 int loadResources();
 
@@ -15,10 +15,13 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
-    new SceneController();
-    GM.run();
-    GM.shutDown();
+    //new SceneController();
 
+    new GameStart;
+
+    GM.run();
+
+    GM.shutDown();
     return 0;
 }
 
