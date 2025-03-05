@@ -1,81 +1,13 @@
 ﻿  Crate.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(17,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(26,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(25,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(34,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(19,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(28,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(27,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(36,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(70,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Animation.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Animation.cpp(101,38): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Animation.cpp(101,32): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Animation.cpp(107,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Animation.cpp(106,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Animation.cpp(108,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Animation.cpp(108,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Box.cpp
-  Clock.cpp
-  DisplayManager.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\DisplayManager.cpp(81,38): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\DisplayManager.cpp(84,39): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-  Event.cpp
-  EventCollision.cpp
-  EventKeyboard.cpp
-  EventMouse.cpp
-  EventOut.cpp
-  EventStep.cpp
-  EventView.cpp
-  Frame.cpp
-  GameManager.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\GameManager.cpp(44,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\GameManager.cpp(44,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\GameManager.cpp(45,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\GameManager.cpp(45,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  InputManager.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,42): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,42): warning C4244:         with
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,42): warning C4244:         [
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,42): warning C4244:             T=int
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,42): warning C4244:         ]
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,29): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,29): warning C4244:         with
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,29): warning C4244:         [
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,29): warning C4244:             T=int
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(115,29): warning C4244:         ]
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,42): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,42): warning C4244:         with
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,42): warning C4244:         [
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,42): warning C4244:             T=int
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,42): warning C4244:         ]
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,29): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,29): warning C4244:         with
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,29): warning C4244:         [
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,29): warning C4244:             T=int
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\InputManager.cpp(149,29): warning C4244:         ]
-  LogManager.cpp
-  Manager.cpp
-  Music.cpp
-  Object.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Object.cpp(22,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib\Object.cpp(22,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  ObjectList.cpp
-  Generating Code...
-  Compiling...
-  ResourceManager.cpp
-  Sound.cpp
-  Sprite.cpp
-  utility.cpp
-  Vector.cpp
-  ViewObject.cpp
-  WorldManager.cpp
-  game.cpp
   GameController.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(30,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(38,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(80,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(36,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(45,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(94,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   GameEnd.cpp
-  GameStart.cpp
-  HighestPoint.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\HighestPoint.cpp(18,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\HighestPoint.cpp(17,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  TowerBase.cpp
   Generating Code...
   Block Stack Kaizo.vcxproj -> C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\vs-2022\x64\Debug\Block Stack Kaizo.exe

@@ -2,6 +2,7 @@
 #ifndef __CRATE_H__
 #define __CRATE_H__
 #include "Object.h"
+#include "Sound.h"
 class GameController;
 
 enum Status {

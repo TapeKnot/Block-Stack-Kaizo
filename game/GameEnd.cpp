@@ -2,11 +2,14 @@
 #include "EventStep.h"
 #include "EventKeyboard.h"
 #include "WorldManager.h"
+#include "ResourceManager.h"
 
-#include "GameStart.h"
+#include "PrizeScreen.h"
+#include "GameController.h"
 
-GameEnd::GameEnd() {
-	// TODO: Play game over sound
+GameEnd::GameEnd(int points) {
+	m_p_sound = RM.getSound("crate-explode");
+	if (m_p_sound) m_p_sound->play();
 
 	// Setup sprite
 	setSprite("game-over");
@@ -19,19 +22,21 @@ GameEnd::GameEnd() {
 	setLocation(df::CENTER_CENTER);
 
 	GC.setScrollSpeed(0.0f);
+
+	m_points = points;
 }
 
 GameEnd::~GameEnd() {
-	df::ObjectList crates = WM.objectsOfType("Crate");
+	df::ObjectList objects = WM.getAllObjects();
 
-	for (int i = 0; i < crates.getCount(); i++) {
-		WM.markForDelete(crates[i]);
-	}
+	for (int i = 0; i < objects.getCount(); i++) {
+		Object* p_o = objects[i];
 
-	df::ObjectList tower_bases = WM.objectsOfType("TowerBase");
-
-	for (int i = 0; i < tower_bases.getCount(); i++) {
-		WM.markForDelete(tower_bases[i]);
+		if (p_o->getType() == "Crate" || p_o->getType() == "TowerBase" ||
+			p_o->getType() == "HighestPoint" || p_o->getType() == "Points" ||
+			p_o->getType() == "Modifier") {
+			WM.markForDelete(p_o);
+		}
 	}
 }
 
@@ -52,7 +57,9 @@ int GameEnd::eventHandler(const df::Event* p_e) {
 }
 
 void GameEnd::reset() {
-	new GameStart;
+	if (m_p_sound) m_p_sound->stop();
+
+	new PrizeScreen(m_points);
 	WM.markForDelete(this);
 }
 

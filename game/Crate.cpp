@@ -1,5 +1,6 @@
 #include "Crate.h"
 #include "Event.h"
+#include "EventStack.h"
 #include "EventCollision.h"
 #include "GameController.h"
 #include "DisplayManager.h"
@@ -7,6 +8,7 @@
 #include "EventKeyboard.h"
 #include "EventOut.h"
 #include "WorldManager.h"
+#include "ResourceManager.h"
 #include "GameEnd.h"
 #include "Modifier.h"
 
@@ -22,7 +24,7 @@ Crate::Crate() {
 
     // Initialize progress speed based on scroll speed
     float adjusted_scroll_speed = GC.getScrollSpeed() / (GC.getFastScrollMode() ? 4.0 : 1.0);
-    m_progress_speed = 0.015 + (adjusted_scroll_speed - 0.05) / 8.0;
+    m_progress_speed = 0.010 + (adjusted_scroll_speed - 0.05) / 8.0;
     
     // Initialize object properties
     setSprite("crate");
@@ -48,7 +50,6 @@ void Crate::drop() {
 void Crate::step() {
     switch (m_status) {
     case MOVING: {
-        // Move crate back and forth
         // Convert m_progress to a value that moves back and forth
         float x_progress;
 
@@ -57,7 +58,6 @@ void Crate::step() {
             x_progress = (1 + std::sin(m_progress * 2 * M_PI - M_PI / 2)) / 2; // Sinusoidal movement
         else
             x_progress = 1 - abs(std::fmod(m_progress * 2, 2) - 1);     // Linear movement
-
 
         // Calculate new x position
         float x_pos = m_crate_size.getX() / 2 + (DM.getHorizontal() - m_crate_size.getX()) * x_progress;
@@ -85,14 +85,18 @@ void Crate::step() {
 }
 
 void Crate::stack() {
+    df::Sound* p_sound = RM.getSound("crate-stack");
+    if (p_sound) p_sound->play();
+
     float target_height = DM.getVertical() - GC.getStackHeight() - m_crate_size.getY() / 2;
 
     setVelocity(df::Vector(0, 0));
     setPosition(df::Vector(getPosition().getX(), target_height));
     m_status = STACKED;
-    GC.successfulDrop(getPosition().getX());
 
-    GC.setTopCrate(this);
+    // Send Stack Event.
+    EventStack* e = new EventStack(this);
+    WM.onEvent(e);
 }
 
 int Crate::eventHandler(const df::Event *p_e) {
@@ -106,18 +110,8 @@ int Crate::eventHandler(const df::Event *p_e) {
         const df::EventCollision* p_collision_event = dynamic_cast<const df::EventCollision*>(p_e);
         
         if (m_status == FALLING) {
-            if ((p_collision_event->getObject1() == GC.getTopCrate()) ||
-                (p_collision_event->getObject2() == GC.getTopCrate())) {
-                stack();
-                return 1;
-            }
-            else if ((p_collision_event->getObject1()->getType() == "TowerBase") &&
-                (p_collision_event->getObject2() == this)) {
-                stack();
-                return 1;
-            }
-            else if ((p_collision_event->getObject1() == this) &&
-                (p_collision_event->getObject2()->getType() == "TowerBase")) {
+            if ((p_collision_event->getObject1() == GC.getHighestObject()) ||
+                (p_collision_event->getObject2() == GC.getHighestObject())) {
                 stack();
                 return 1;
             }
@@ -131,6 +125,9 @@ int Crate::eventHandler(const df::Event *p_e) {
         const df::EventKeyboard *p_keyboard_event = dynamic_cast<const df::EventKeyboard *>(p_e);
         if (p_keyboard_event->getKeyboardAction() == df::KEY_PRESSED) {
             if (p_keyboard_event->getKey() == df::Keyboard::SPACE && m_status == MOVING) {
+                df::Sound* p_sound = RM.getSound("crate-drop");
+                if (p_sound) p_sound->play();
+
                 m_status = FALLING;
                 return 1;
             }
@@ -139,8 +136,8 @@ int Crate::eventHandler(const df::Event *p_e) {
 
     // Handle out-of-bounds events
     else if (p_e->getType() == df::OUT_EVENT) {
-        if (m_status == FALLING || GC.getTopCrate() == this) {
-            new GameEnd();
+        if (m_status == FALLING || GC.getHighestObject() == this) {
+            GC.endGame();
         }
 
         WM.markForDelete(this);

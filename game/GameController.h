@@ -4,6 +4,9 @@
 #define GC GameController::getInstance()
 #include "Object.h"
 #include "Crate.h"
+#include "HighestPoint.h"
+#include "Points.h"
+#include "Music.h"
 #include "Modifier.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
@@ -19,7 +22,10 @@ private:
     float m_scroll_speed;
     bool m_fast_scroll_mode;
     df::Object *m_p_tower_base;
-    Crate* m_p_top_crate;
+    df::Object* m_p_highest_obj;
+    HighestPoint* m_p_highest_point;
+    Points* m_p_points;
+    df::Music* m_p_music;
     Modifier* m_p_modifier;
 
 public:
@@ -35,9 +41,10 @@ public:
     bool getFastScrollMode() const;
     Modifier *getModifier() const;
     void setModifier(Modifier *new_modifier);
-    Crate* getTopCrate() const;
-    void setTopCrate(Crate* new_crate);
+    df::Object* getHighestObject() const;
+    void setHighestObject(df::Object* new_obj);
     void successfulDrop(float new_stack_position);
+    void endGame();
     int eventHandler(const df::Event *p_e) override;
     int draw() override;
 };

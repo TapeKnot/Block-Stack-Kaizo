@@ -1,9 +1,12 @@
 #include "GameController.h"
 #include "DisplayManager.h"
+#include "ResourceManager.h"
 #include "Crate.h"
 #include "EventStep.h"
+#include "EventStack.h"
 #include "TowerBase.h"
-#include "WorldManager.h"
+#include "HighestPoint.h"
+#include "GameEnd.h"
 
 // Constructor
 GameController::GameController() {
@@ -15,7 +18,9 @@ GameController::GameController() {
 
     // Initialize tower base
     m_p_tower_base = nullptr;
-    m_p_top_crate = nullptr;
+    m_p_highest_obj = nullptr;
+    m_p_highest_point = nullptr;
+    m_p_points = nullptr;
 
     // Initialize modifier
     m_p_modifier = nullptr;
@@ -38,12 +43,16 @@ void GameController::reset() {
 
     // Reset tower base
     m_p_tower_base = new TowerBase;
+    m_p_highest_obj = m_p_tower_base;
     m_p_tower_base->setPosition(
         df::Vector(DM.getHorizontal()/2, DM.getVertical() - m_stack_height));
 
+    m_p_points = new Points();
+
+    m_p_music = RM.getMusic("game-music");
+    if (m_p_music) m_p_music->play();
+
     // Reset modifier
-    if (m_p_modifier != nullptr)
-        WM.markForDelete(m_p_modifier);
     m_p_modifier = nullptr;
 
     // Spawn crate
@@ -86,12 +95,12 @@ void GameController::setModifier(Modifier* new_modifier) {
     m_p_modifier = new_modifier;
 }
 
-Crate* GameController::getTopCrate() const {
-    return m_p_top_crate;
+df::Object* GameController::getHighestObject() const {
+    return m_p_highest_obj;
 }
 
-void GameController::setTopCrate(Crate* new_crate) {
-    m_p_top_crate = new_crate;
+void GameController::setHighestObject(df::Object* new_obj) {
+    m_p_highest_obj = new_obj;
 }
 
 // Successful drop method
@@ -108,7 +117,14 @@ void GameController::successfulDrop(float new_stack_position) {
         m_p_modifier = new Modifier(mod_type, mod_lifespan);
     }
 
+
     new Crate();
+}
+
+void GameController::endGame() {
+    if (m_p_music) m_p_music->stop();
+
+    new GameEnd(m_p_points->getValue());
 }
 
 // Event handler method
@@ -117,17 +133,30 @@ int GameController::eventHandler(const df::Event *p_e) {
     if (p_e->getType() == df::STEP_EVENT) {
         m_stack_height -= m_scroll_speed;
 
-        if (m_p_top_crate != nullptr) {
-            if (m_p_top_crate->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
-                m_scroll_speed *= 4;
-                m_fast_scroll_mode = true;
-            }
-            else if (m_p_top_crate->getPosition().getY() > DM.getVertical() / 2 && m_fast_scroll_mode == true) {
-                m_scroll_speed /= 4;
-                m_fast_scroll_mode = false;
-            }
+        //printf("Fast Mode: %d\n", m_fast_scroll_mode);
+
+        if (m_p_highest_obj->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
+            m_scroll_speed *= 4;
+            m_fast_scroll_mode = true;
+        }
+        else if (m_p_highest_obj->getPosition().getY() > DM.getVertical() / 2 && m_fast_scroll_mode == true) {
+            m_scroll_speed /= 4;
+            m_fast_scroll_mode = false;
         }
         
+        return 1;
+    }
+
+    else if (p_e->getType() == STACK_EVENT) {
+        const EventStack* p_stack_event = dynamic_cast<const EventStack*>(p_e);
+        Crate* p_stacked_crate = p_stack_event->getCrate();
+        float pos = p_stacked_crate->getPosition().getX();
+
+        setHighestObject(p_stacked_crate);
+        //m_p_highest_point->updatePosition(m_p_highest_obj);
+
+        successfulDrop(pos);
+
         return 1;
     }
 
