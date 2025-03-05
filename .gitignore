@@ -35,3 +35,5 @@
 game/game
 dragonfly
 .vs
+game/Makefile
+game/dragonfly.log

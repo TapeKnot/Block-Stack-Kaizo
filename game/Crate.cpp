@@ -8,7 +8,7 @@
 #include "EventKeyboard.h"
 #include "EventOut.h"
 #include "WorldManager.h"
-#include "gameEnd.h"
+#include "GameEnd.h"
 
 #include <cmath>
 
