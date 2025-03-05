@@ -1,31 +1,23 @@
 #include "EventStep.h"
 #include "WorldManager.h"
+#include "DisplayManager.h"
 #include "GameController.h"
-#include "Crate.h"
 
 #include "HighestPoint.h"
 
 HighestPoint::HighestPoint() {
-
-	// Setup sprite
+	// Set sprite to make object visible.
 	setSprite("highest-point");
 
 	// Set object type.
 	setType("HighestPoint");
 
-	df::Vector sprite_size = df::Vector(
+	setAltitude(3);
+
+	m_sprite_size = df::Vector(
 		getAnimation().getSprite()->getWidth(),
 		getAnimation().getSprite()->getHeight()
 	);
-
-	df::Vector new_pos;
-	df::Vector top_crate_pos = GC.getTopCrate()->getPosition();
-	df::Vector top_crate_size = GC.getTopCrate()->getCrateSize();
-
-	new_pos.setX(top_crate_pos.getX() - (top_crate_size.getX() / 2) - (sprite_size.getX() / 2));
-	new_pos.setX(top_crate_pos.getY() + (top_crate_size.getY() / 2));
-
-	setPosition(new_pos);
 }
 
 int HighestPoint::eventHandler(const df::Event* p_e) {
@@ -37,6 +29,35 @@ int HighestPoint::eventHandler(const df::Event* p_e) {
 	}
 
 	return 0;
+}
+
+void HighestPoint::updatePosition(df::Object* highest_obj) {
+
+	df::Vector obj_pos = highest_obj->getPosition();
+
+	printf("Object Pos: X = %f, Y = %f\n", obj_pos.getX(), obj_pos.getY());
+
+	df::Vector obj_size = df::Vector(
+		highest_obj->getAnimation().getSprite()->getWidth(),
+		highest_obj->getAnimation().getSprite()->getHeight()
+	);
+
+	df::Vector new_pos;
+
+	if (obj_pos.getX() <= (DM.getHorizontal() / 2)) {
+		new_pos.setX(obj_pos.getX() + (obj_size.getX() / 2) /* + (m_sprite_size.getX() / 2)*/);
+		//getAnimation().setIndex(2);
+	}
+	else {
+		new_pos.setX(obj_pos.getX() - (obj_size.getX() / 2) /* - (m_sprite_size.getX() / 2)*/);
+		//getAnimation().setIndex(1);
+	}
+
+	new_pos.setY(obj_pos.getY() /* - (obj_size.getY() / 2)*/);
+
+	printf("New Position: X = %f, Y = %f\n", new_pos.getX(), new_pos.getY());
+
+	setPosition(new_pos);
 }
 
 int HighestPoint::draw() {

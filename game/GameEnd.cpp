@@ -22,6 +22,8 @@ GameEnd::GameEnd() {
 }
 
 GameEnd::~GameEnd() {
+
+	// Cleanup game objects.
 	df::ObjectList crates = WM.objectsOfType("Crate");
 
 	for (int i = 0; i < crates.getCount(); i++) {
@@ -32,6 +34,12 @@ GameEnd::~GameEnd() {
 
 	for (int i = 0; i < tower_bases.getCount(); i++) {
 		WM.markForDelete(tower_bases[i]);
+	}
+
+	df::ObjectList highest_points = WM.objectsOfType("HighestPoint");
+
+	for (int i = 0; i < highest_points.getCount(); i++) {
+		WM.markForDelete(highest_points[i]);
 	}
 }
 

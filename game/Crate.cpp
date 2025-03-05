@@ -1,5 +1,6 @@
 #include "Crate.h"
 #include "Event.h"
+#include "EventStack.h"
 #include "EventCollision.h"
 #include "GameController.h"
 #include "DisplayManager.h"
@@ -83,9 +84,10 @@ void Crate::stack() {
     setVelocity(df::Vector(0, 0));
     setPosition(df::Vector(getPosition().getX(), target_height));
     m_status = STACKED;
-    GC.successfulDrop(getPosition().getX());
 
-    GC.setTopCrate(this);
+    // Send Stack Event.
+    EventStack* e = new EventStack(this);
+    WM.onEvent(e);
 }
 
 int Crate::eventHandler(const df::Event *p_e) {
@@ -99,18 +101,8 @@ int Crate::eventHandler(const df::Event *p_e) {
         const df::EventCollision* p_collision_event = dynamic_cast<const df::EventCollision*>(p_e);
         
         if (m_status == FALLING) {
-            if ((p_collision_event->getObject1() == GC.getTopCrate()) ||
-                (p_collision_event->getObject2() == GC.getTopCrate())) {
-                stack();
-                return 1;
-            }
-            else if ((p_collision_event->getObject1()->getType() == "TowerBase") &&
-                (p_collision_event->getObject2() == this)) {
-                stack();
-                return 1;
-            }
-            else if ((p_collision_event->getObject1() == this) &&
-                (p_collision_event->getObject2()->getType() == "TowerBase")) {
+            if ((p_collision_event->getObject1() == GC.getHighestObject()) ||
+                (p_collision_event->getObject2() == GC.getHighestObject())) {
                 stack();
                 return 1;
             }
@@ -132,7 +124,7 @@ int Crate::eventHandler(const df::Event *p_e) {
 
     // Handle out-of-bounds events
     else if (p_e->getType() == df::OUT_EVENT) {
-        if (m_status == FALLING || GC.getTopCrate() == this) {
+        if (m_status == FALLING || GC.getHighestObject() == this) {
             new GameEnd();
         }
 
