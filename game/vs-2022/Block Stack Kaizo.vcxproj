@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\BackgroundObject.cpp" />
     <ClCompile Include="..\Crate.cpp" />
     <ClCompile Include="..\dragonfly\lib\Animation.cpp" />
     <ClCompile Include="..\dragonfly\lib\Box.cpp" />
@@ -52,12 +53,15 @@
     <ClCompile Include="..\GameEnd.cpp" />
     <ClCompile Include="..\GameStart.cpp" />
     <ClCompile Include="..\HighestPoint.cpp" />
+    <ClCompile Include="..\Modifier.cpp" />
     <ClCompile Include="..\Points.cpp" />
     <ClCompile Include="..\PrizeScreen.cpp" />
     <ClCompile Include="..\TowerBase.cpp" />
     <ClCompile Include="..\Warning.cpp" />
+    <ClCompile Include="..\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\BackgroundObject.h" />
     <ClInclude Include="..\Crate.h" />
     <ClInclude Include="..\dragonfly\include\Animation.h" />
     <ClInclude Include="..\dragonfly\include\Box.h" />
@@ -92,10 +96,12 @@
     <ClInclude Include="..\GameEnd.h" />
     <ClInclude Include="..\GameStart.h" />
     <ClInclude Include="..\HighestPoint.h" />
+    <ClInclude Include="..\Modifier.h" />
     <ClInclude Include="..\Points.h" />
     <ClInclude Include="..\PrizeScreen.h" />
     <ClInclude Include="..\TowerBase.h" />
     <ClInclude Include="..\Warning.h" />
+    <ClInclude Include="..\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -7,11 +7,9 @@
 #include "HighestPoint.h"
 #include "Points.h"
 #include "Music.h"
-#include "Warning.h"
 #include "Modifier.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
-const float STACK_HEIGHT_WARNING = 5.0; // Stack height to show warning text.
 
 class GameController : public df::Object {
 private:
@@ -24,12 +22,12 @@ private:
     float m_scroll_speed;
     bool m_fast_scroll_mode;
     int m_total_stacked;
+    bool m_game_ended;
     df::Object *m_p_tower_base;
     df::Object* m_p_highest_obj;
     HighestPoint* m_p_highest_point;
     Points* m_p_points;
     df::Music* m_p_music;
-    Warning* m_p_warning;
     Modifier* m_p_modifier;
 
 public:
@@ -45,6 +43,10 @@ public:
     bool getFastScrollMode() const;
     Modifier *getModifier() const;
     void setModifier(Modifier *new_modifier);
+    int getTotalStacked() const;
+    void setTotalStacked(int new_total_stacked);
+    bool getGameEnded() const;
+    void setGameEnded(bool new_game_ended);
     df::Object* getHighestObject() const;
     void setHighestObject(df::Object* new_obj);
     void successfulDrop(float new_stack_position);

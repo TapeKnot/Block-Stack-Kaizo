@@ -34,7 +34,7 @@ GameEnd::~GameEnd() {
 
 		if (p_o->getType() == "Crate" || p_o->getType() == "TowerBase" ||
 			p_o->getType() == "HighestPoint" || p_o->getType() == "Points" ||
-			p_o->getType() == "Modifier") {
+			p_o->getType() == "Modifier" || p_o->getType() == "Warning") {
 			WM.markForDelete(p_o);
 		}
 	}

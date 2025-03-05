@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include "Crate.h"
 #include "Event.h"
 #include "EventStack.h"
@@ -13,6 +14,7 @@
 #include "Modifier.h"
 
 #include <cmath>
+#include <math.h>
 
 Crate::Crate() {
     // Initialize member variables
