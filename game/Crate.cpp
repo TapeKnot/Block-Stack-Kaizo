@@ -10,6 +10,7 @@
 #include "WorldManager.h"
 #include "ResourceManager.h"
 #include "GameEnd.h"
+#include "Modifier.h"
 
 #include <cmath>
 
@@ -17,6 +18,15 @@ Crate::Crate() {
     // Initialize member variables
     m_status = MOVING;
     m_target_height = DM.getVertical() + 5;
+
+    // Initialize block position to a random number
+    m_progress = rand() % 100 / 100.0;
+
+    // Initialize progress speed based on scroll speed
+    float adjusted_scroll_speed = GC.getScrollSpeed() / (GC.getFastScrollMode() ? 4.0 : 1.0);
+    if (adjusted_scroll_speed == 0) m_progress_speed = 0.010;
+    else m_progress_speed = adjusted_scroll_speed / 1.5 - 0.015;
+    // printf("Progress Speed: %f\n", m_progress_speed);
     
     // Initialize object properties
     setSprite("crate");
@@ -28,23 +38,7 @@ Crate::Crate() {
         getAnimation().getSprite()->getHeight() + 1
     );
 
-    float max_pos = DM.getHorizontal() - (m_crate_size.getX() / 2);
-    float min_pos = 0 + (m_crate_size.getX() / 2);
-
-    float start_pos = rand() % (int)floor(max_pos) + min_pos;
-
-    setPosition(df::Vector(start_pos, DM.getVertical() - 20));
-
-    float start_vel;
-
-    if (rand() % 2 == 1) {
-        start_vel = 1;
-    }
-    else {
-        start_vel = -1;
-    }
-
-    setVelocity(df::Vector(start_vel, 0));
+    setPosition(df::Vector(-10, -10));
 }
 
 df::Vector Crate::getCrateSize() const {
@@ -58,12 +52,27 @@ void Crate::drop() {
 void Crate::step() {
     switch (m_status) {
     case MOVING: {
-        if (getPosition().getX() >= DM.getHorizontal() - (m_crate_size.getX() / 2)) {
-            setVelocity(df::Vector(-1, getVelocity().getY()));
-        }
-        else if (getPosition().getX() <= 0 + (m_crate_size.getX() / 2)) {
-            setVelocity(df::Vector(1, getVelocity().getY()));
-        }
+        // Convert m_progress to a value that moves back and forth
+        float x_progress;
+
+        Modifier *mod = GC.getModifier();
+        if (mod != nullptr && mod->getModifierType() == SWING)
+            x_progress = (1 + std::sin(m_progress * 2 * M_PI - M_PI / 2)) / 2; // Sinusoidal movement
+        else
+            x_progress = 1 - abs(std::fmod(m_progress * 2, 2) - 1);     // Linear movement
+
+        // Calculate new x position
+        float x_pos = m_crate_size.getX() / 2 + (DM.getHorizontal() - m_crate_size.getX()) * x_progress;
+
+        // Set new position and increment progress
+        setPosition(df::Vector(x_pos, DM.getVertical() / 4));
+
+        // Increment progress
+        if (mod != nullptr && mod->getModifierType() == SPEEDY)
+            m_progress += m_progress_speed * 1.25;
+        else
+            m_progress += m_progress_speed;
+
         break;
     }
     case FALLING: {

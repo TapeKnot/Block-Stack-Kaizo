@@ -32,7 +32,9 @@ GameEnd::~GameEnd() {
 	for (int i = 0; i < objects.getCount(); i++) {
 		Object* p_o = objects[i];
 
-		if (p_o->getType() == "Crate" || p_o->getType() == "TowerBase" || p_o->getType() == "HighestPoint" || p_o->getType() == "Points") {
+		if (p_o->getType() == "Crate" || p_o->getType() == "TowerBase" ||
+			p_o->getType() == "HighestPoint" || p_o->getType() == "Points" ||
+			p_o->getType() == "Modifier") {
 			WM.markForDelete(p_o);
 		}
 	}
