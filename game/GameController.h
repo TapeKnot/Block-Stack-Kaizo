@@ -5,6 +5,7 @@
 #include "Object.h"
 #include "Crate.h"
 #include "HighestPoint.h"
+#include "Points.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
 
@@ -21,6 +22,7 @@ private:
     df::Object *m_p_tower_base;
     df::Object* m_p_highest_obj;
     HighestPoint* m_p_highest_point;
+    Points* m_p_points;
 
 public:
     // Get the singleton instance of the GameManager.
@@ -35,6 +37,7 @@ public:
     df::Object* getHighestObject() const;
     void setHighestObject(df::Object* new_obj);
     void successfulDrop(float new_stack_position);
+    void endGame();
     int eventHandler(const df::Event *p_e) override;
     int draw() override;
 };

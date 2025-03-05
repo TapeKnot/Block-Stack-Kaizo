@@ -5,6 +5,7 @@
 #include "EventStack.h"
 #include "TowerBase.h"
 #include "HighestPoint.h"
+#include "GameEnd.h"
 
 // Constructor
 GameController::GameController() {
@@ -18,6 +19,7 @@ GameController::GameController() {
     m_p_tower_base = nullptr;
     m_p_highest_obj = nullptr;
     m_p_highest_point = nullptr;
+    m_p_points = nullptr;
 }
 
 GameController& GameController::getInstance() {
@@ -40,6 +42,8 @@ void GameController::reset() {
     m_p_highest_obj = m_p_tower_base;
     m_p_tower_base->setPosition(
         df::Vector(DM.getHorizontal()/2, DM.getVertical() - m_stack_height));
+
+    m_p_points = new Points();
 
     //m_p_highest_point = new HighestPoint();
 
@@ -86,6 +90,10 @@ void GameController::successfulDrop(float new_stack_position) {
     m_scroll_speed += (m_scroll_speed == 0) ? 0.02 : 0.005;
 
     new Crate();
+}
+
+void GameController::endGame() {
+    new GameEnd(m_p_points->getValue());
 }
 
 // Event handler method

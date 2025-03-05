@@ -125,7 +125,7 @@ int Crate::eventHandler(const df::Event *p_e) {
     // Handle out-of-bounds events
     else if (p_e->getType() == df::OUT_EVENT) {
         if (m_status == FALLING || GC.getHighestObject() == this) {
-            new GameEnd();
+            GC.endGame();
         }
 
         WM.markForDelete(this);
