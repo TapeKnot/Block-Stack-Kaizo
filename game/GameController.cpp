@@ -1,13 +1,16 @@
 #include "GameController.h"
 #include "DisplayManager.h"
 #include "ResourceManager.h"
+#include "WorldManager.h"
 #include "Crate.h"
 #include "EventStep.h"
 #include "EventStack.h"
 #include "TowerBase.h"
 #include "HighestPoint.h"
 #include "GameEnd.h"
+#include "Animation.h"
 #include "BackgroundObject.h"
+#include "Warning.h"
 
 // Constructor
 GameController::GameController() {
@@ -16,6 +19,7 @@ GameController::GameController() {
     m_stack_position = 0.0f;
     m_scroll_speed = 0.0f; // Example speed
     m_fast_scroll_mode = false;
+    m_game_ended = false;
 
     // Initialize tower base
     m_p_tower_base = nullptr;
@@ -34,6 +38,7 @@ GameController& GameController::getInstance() {
 
 // Reset game state
 void GameController::reset() {
+
     // Reset stack height and position
     m_stack_height = INITIAL_STACK_HEIGHT;
     m_stack_position = DM.getHorizontal()/2;
@@ -42,6 +47,7 @@ void GameController::reset() {
     // Reset scroll speed
     m_scroll_speed = 0.0;
     m_fast_scroll_mode = false;
+    m_game_ended = false;
 
     // Reset tower base
     m_p_tower_base = new TowerBase;
@@ -56,6 +62,8 @@ void GameController::reset() {
 
     // Reset modifier
     m_p_modifier = nullptr;
+
+    new Warning();
 
     // Spawn crate
     new Crate();
@@ -97,6 +105,21 @@ void GameController::setModifier(Modifier* new_modifier) {
     m_p_modifier = new_modifier;
 }
 
+int GameController::getTotalStacked() const {
+    return m_total_stacked;
+}
+
+void GameController::setTotalStacked(int new_total_stacked) {
+    m_total_stacked = new_total_stacked;
+}
+
+bool GameController::getGameEnded() const {
+    return m_game_ended;
+}
+void GameController::setGameEnded(bool new_game_ended) {
+    m_game_ended = new_game_ended;
+}
+
 df::Object* GameController::getHighestObject() const {
     return m_p_highest_obj;
 }
@@ -120,12 +143,15 @@ void GameController::successfulDrop(float new_stack_position) {
         m_p_modifier = new Modifier(mod_type, mod_lifespan);
     }
 
+    m_scroll_speed += (m_scroll_speed == 0) ? 0.02 : 0.005;
 
     new Crate();
 }
 
 void GameController::endGame() {
     if (m_p_music) m_p_music->stop();
+
+    m_game_ended = true;
 
     new GameEnd(m_p_points->getValue());
 }
@@ -134,6 +160,10 @@ void GameController::endGame() {
 int GameController::eventHandler(const df::Event *p_e) {
     // Handle step events
     if (p_e->getType() == df::STEP_EVENT) {
+        if (m_game_ended) {
+            return 1;
+        }
+
         m_stack_height -= m_scroll_speed;
 
         if (m_p_highest_obj->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
