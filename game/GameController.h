@@ -4,6 +4,7 @@
 #define GC GameController::getInstance()
 #include "Object.h"
 #include "Crate.h"
+#include "Modifier.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
 
@@ -19,6 +20,7 @@ private:
     bool m_fast_scroll_mode;
     df::Object *m_p_tower_base;
     Crate* m_p_top_crate;
+    Modifier* m_p_modifier;
 
 public:
     // Get the singleton instance of the GameManager.
@@ -30,6 +32,9 @@ public:
     void increaseStackHeight(float delta);
     float getScrollSpeed() const;
     void setScrollSpeed(float new_speed);
+    bool getFastScrollMode() const;
+    Modifier *getModifier() const;
+    void setModifier(Modifier *new_modifier);
     Crate* getTopCrate() const;
     void setTopCrate(Crate* new_crate);
     void successfulDrop(float new_stack_position);

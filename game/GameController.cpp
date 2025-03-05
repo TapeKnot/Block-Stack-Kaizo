@@ -3,6 +3,7 @@
 #include "Crate.h"
 #include "EventStep.h"
 #include "TowerBase.h"
+#include "WorldManager.h"
 
 // Constructor
 GameController::GameController() {
@@ -15,6 +16,9 @@ GameController::GameController() {
     // Initialize tower base
     m_p_tower_base = nullptr;
     m_p_top_crate = nullptr;
+
+    // Initialize modifier
+    m_p_modifier = nullptr;
 }
 
 GameController& GameController::getInstance() {
@@ -24,18 +28,23 @@ GameController& GameController::getInstance() {
 
 // Reset game state
 void GameController::reset() {
-
     // Reset stack height and position
     m_stack_height = INITIAL_STACK_HEIGHT;
     m_stack_position = DM.getHorizontal()/2;
 
     // Reset scroll speed
     m_scroll_speed = 0.0;
+    m_fast_scroll_mode = false;
 
     // Reset tower base
     m_p_tower_base = new TowerBase;
     m_p_tower_base->setPosition(
         df::Vector(DM.getHorizontal()/2, DM.getVertical() - m_stack_height));
+
+    // Reset modifier
+    if (m_p_modifier != nullptr)
+        WM.markForDelete(m_p_modifier);
+    m_p_modifier = nullptr;
 
     // Spawn crate
     new Crate();
@@ -65,6 +74,18 @@ void GameController::setScrollSpeed(float new_speed) {
     m_scroll_speed = new_speed;
 }
 
+bool GameController::getFastScrollMode() const {
+    return m_fast_scroll_mode;
+}
+
+Modifier* GameController::getModifier() const {
+    return m_p_modifier;
+}
+
+void GameController::setModifier(Modifier* new_modifier) {
+    m_p_modifier = new_modifier;
+}
+
 Crate* GameController::getTopCrate() const {
     return m_p_top_crate;
 }
@@ -77,7 +98,16 @@ void GameController::setTopCrate(Crate* new_crate) {
 void GameController::successfulDrop(float new_stack_position) {
     m_stack_position = new_stack_position;
     m_stack_height += 4;
-    m_scroll_speed += (m_scroll_speed == 0) ? 0.02 : 0.005;
+    m_scroll_speed += (m_scroll_speed == 0) ? 0.05 : 0.001;
+
+    // 1-in-5 chance to spawn a modifier
+    if (m_p_modifier == nullptr && rand() % 5 == 0) {
+        // Randomly select a modifier type and lifespan
+        ModifierType mod_type = static_cast<ModifierType>(rand() % 3);
+        int mod_lifespan = rand() % 300 + 150;
+        m_p_modifier = new Modifier(mod_type, mod_lifespan);
+    }
+
     new Crate();
 }
 
@@ -85,10 +115,7 @@ void GameController::successfulDrop(float new_stack_position) {
 int GameController::eventHandler(const df::Event *p_e) {
     // Handle step events
     if (p_e->getType() == df::STEP_EVENT) {
-        //printf("stack height: %f\n", m_stack_height);
         m_stack_height -= m_scroll_speed;
-
-        //printf("Fast Mode: %d\n", m_fast_scroll_mode);
 
         if (m_p_top_crate != nullptr) {
             if (m_p_top_crate->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
