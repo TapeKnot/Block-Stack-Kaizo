@@ -37,3 +37,4 @@ dragonfly
 .vs
 game/Makefile
 game/dragonfly.log
+*.zip
