@@ -2,12 +2,14 @@
 #include "EventStep.h"
 #include "EventKeyboard.h"
 #include "WorldManager.h"
+#include "ResourceManager.h"
 
 #include "PrizeScreen.h"
 #include "GameController.h"
 
 GameEnd::GameEnd(int points) {
-	// TODO: Play game over sound
+	m_p_sound = RM.getSound("crate-explode");
+	if (m_p_sound) m_p_sound->play();
 
 	// Setup sprite
 	setSprite("game-over");
@@ -53,6 +55,8 @@ int GameEnd::eventHandler(const df::Event* p_e) {
 }
 
 void GameEnd::reset() {
+	if (m_p_sound) m_p_sound->stop();
+
 	new PrizeScreen(m_points);
 	WM.markForDelete(this);
 }

@@ -8,6 +8,7 @@
 #include "EventKeyboard.h"
 #include "EventOut.h"
 #include "WorldManager.h"
+#include "ResourceManager.h"
 #include "GameEnd.h"
 
 #include <cmath>
@@ -44,8 +45,6 @@ Crate::Crate() {
     }
 
     setVelocity(df::Vector(start_vel, 0));
-
-    
 }
 
 df::Vector Crate::getCrateSize() const {
@@ -79,6 +78,9 @@ void Crate::step() {
 }
 
 void Crate::stack() {
+    df::Sound* p_sound = RM.getSound("crate-stack");
+    if (p_sound) p_sound->play();
+
     float target_height = DM.getVertical() - GC.getStackHeight() - m_crate_size.getY() / 2;
 
     setVelocity(df::Vector(0, 0));
@@ -116,6 +118,9 @@ int Crate::eventHandler(const df::Event *p_e) {
         const df::EventKeyboard *p_keyboard_event = dynamic_cast<const df::EventKeyboard *>(p_e);
         if (p_keyboard_event->getKeyboardAction() == df::KEY_PRESSED) {
             if (p_keyboard_event->getKey() == df::Keyboard::SPACE && m_status == MOVING) {
+                df::Sound* p_sound = RM.getSound("crate-drop");
+                if (p_sound) p_sound->play();
+
                 m_status = FALLING;
                 return 1;
             }

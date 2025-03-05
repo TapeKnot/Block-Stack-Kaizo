@@ -6,6 +6,7 @@
 #include "Crate.h"
 #include "HighestPoint.h"
 #include "Points.h"
+#include "Music.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
 
@@ -23,6 +24,7 @@ private:
     df::Object* m_p_highest_obj;
     HighestPoint* m_p_highest_point;
     Points* m_p_points;
+    df::Music* m_p_music;
 
 public:
     // Get the singleton instance of the GameManager.

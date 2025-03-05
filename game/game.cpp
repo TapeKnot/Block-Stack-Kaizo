@@ -41,6 +41,12 @@ int loadResources() {
         RM.loadSprite("sprites/prize-crown-spr.txt", "prize-crown") == 0 &&
         RM.loadSprite("sprites/prize-car-spr.txt", "prize-car") == 0 &&
         RM.loadSprite("sprites/prize-liberty-spr.txt", "prize-liberty") == 0 &&
-        RM.loadSprite("sprites/prize-cool-spr.txt", "prize-cool") == 0
+        RM.loadSprite("sprites/prize-cool-spr.txt", "prize-cool") == 0 &&
+        RM.loadSound("sounds/crate-drop.wav", "crate-drop") == 0 &&
+        RM.loadSound("sounds/crate-stack.wav", "crate-stack") == 0 &&
+        RM.loadSound("sounds/crate-explode.wav", "crate-explode") == 0 &&
+        RM.loadMusic("sounds/menu-music.wav", "menu-music") == 0 &&
+        RM.loadMusic("sounds/game-music.wav", "game-music") == 0 &&
+        RM.loadMusic("sounds/prize-music.wav", "prize-music") == 0
     ) ? 0 : -1;
 }

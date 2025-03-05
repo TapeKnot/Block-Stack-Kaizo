@@ -2,10 +2,14 @@
 #include "EventStep.h"
 #include "EventKeyboard.h"
 #include "WorldManager.h"
+#include "ResourceManager.h"
 
 #include "GameStart.h"
 
 PrizeScreen::PrizeScreen(int points) {
+	m_p_music = RM.getMusic("prize-music");
+	if (m_p_music) m_p_music->play();
+
 	if (points < 10) {			// 0 crates stacked.
 		setSprite("prize-nothing");
 	}
@@ -56,6 +60,8 @@ int PrizeScreen::eventHandler(const df::Event* p_e) {
 }
 
 void PrizeScreen::reset() {
+	if (m_p_music) m_p_music->stop();
+
 	new GameStart;
 	WM.markForDelete(this);
 }
