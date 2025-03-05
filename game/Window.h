@@ -2,7 +2,7 @@
 
 #include "Object.h"
 
-const int WINDOW_WIDTH = 40;
+const int WINDOW_WIDTH = 50;
 
 class Window : public df::Object {
 public:

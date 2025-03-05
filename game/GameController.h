@@ -21,6 +21,7 @@ private:
     float m_stack_position;
     float m_scroll_speed;
     bool m_fast_scroll_mode;
+    int m_total_stacked;
     df::Object *m_p_tower_base;
     df::Object* m_p_highest_obj;
     HighestPoint* m_p_highest_point;
