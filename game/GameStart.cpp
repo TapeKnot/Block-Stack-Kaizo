@@ -1,6 +1,7 @@
 #include "GameStart.h"
 #include "EventKeyboard.h"
 #include "WorldManager.h"
+#include "ResourceManager.h"
 #include "GameManager.h"
 #include "TowerBase.h"
 #include "Crate.h"
@@ -12,6 +13,9 @@ GameStart::GameStart() {
 
 	// Set object type.
 	setType("GameStart");
+
+	m_p_music = RM.getMusic("menu-music");
+	if (m_p_music) m_p_music->play();
 
 	setAltitude(df::MAX_ALTITUDE);
 
@@ -43,7 +47,7 @@ int GameStart::eventHandler(const df::Event* p_e) {
 
 // Count down to end of "message"
 void GameStart::start() {
-	//new GameController;
+	if (m_p_music) m_p_music->stop();
 	GC.reset();
 
 	WM.markForDelete(this);

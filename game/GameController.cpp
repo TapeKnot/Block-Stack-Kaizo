@@ -1,5 +1,6 @@
 #include "GameController.h"
 #include "DisplayManager.h"
+#include "ResourceManager.h"
 #include "Crate.h"
 #include "EventStep.h"
 #include "EventStack.h"
@@ -44,6 +45,9 @@ void GameController::reset() {
         df::Vector(DM.getHorizontal()/2, DM.getVertical() - m_stack_height));
 
     m_p_points = new Points();
+
+    m_p_music = RM.getMusic("game-music");
+    if (m_p_music) m_p_music->play();
 
     //m_p_highest_point = new HighestPoint();
 
@@ -93,6 +97,8 @@ void GameController::successfulDrop(float new_stack_position) {
 }
 
 void GameController::endGame() {
+    if (m_p_music) m_p_music->stop();
+
     new GameEnd(m_p_points->getValue());
 }
 
