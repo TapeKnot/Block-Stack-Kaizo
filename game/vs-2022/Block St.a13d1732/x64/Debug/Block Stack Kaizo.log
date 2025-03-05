@@ -4,10 +4,4 @@ C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\g
 C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(27,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(36,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(70,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  GameController.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(36,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(45,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(94,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-  GameEnd.cpp
-  Generating Code...
   Block Stack Kaizo.vcxproj -> C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\vs-2022\x64\Debug\Block Stack Kaizo.exe

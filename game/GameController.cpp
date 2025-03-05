@@ -1,12 +1,14 @@
 #include "GameController.h"
 #include "DisplayManager.h"
 #include "ResourceManager.h"
+#include "WorldManager.h"
 #include "Crate.h"
 #include "EventStep.h"
 #include "EventStack.h"
 #include "TowerBase.h"
 #include "HighestPoint.h"
 #include "GameEnd.h"
+#include "Animation.h"
 
 // Constructor
 GameController::GameController() {
@@ -21,6 +23,7 @@ GameController::GameController() {
     m_p_highest_obj = nullptr;
     m_p_highest_point = nullptr;
     m_p_points = nullptr;
+    m_p_warning = nullptr;
 }
 
 GameController& GameController::getInstance() {
@@ -99,6 +102,8 @@ void GameController::successfulDrop(float new_stack_position) {
 void GameController::endGame() {
     if (m_p_music) m_p_music->stop();
 
+    WM.markForDelete(m_p_warning);  // Delete warning text.
+
     new GameEnd(m_p_points->getValue());
 }
 
@@ -110,6 +115,15 @@ int GameController::eventHandler(const df::Event *p_e) {
         m_stack_height -= m_scroll_speed;
 
         //printf("Fast Mode: %d\n", m_fast_scroll_mode);
+
+        if (m_p_highest_obj != nullptr && m_p_highest_obj->getType() != "TowerBase" && m_stack_height <= STACK_HEIGHT_WARNING && m_p_warning == nullptr) {
+            m_p_warning = new Warning();
+        }
+        else if (m_stack_height > STACK_HEIGHT_WARNING && m_p_warning != nullptr) {
+            WM.markForDelete(m_p_warning);
+
+            m_p_warning = nullptr;
+        }
 
         if (m_p_highest_obj->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
             m_scroll_speed *= 4;

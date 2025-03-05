@@ -83,8 +83,12 @@ void Crate::stack() {
 
     float target_height = DM.getVertical() - GC.getStackHeight() - m_crate_size.getY() / 2;
 
-    setVelocity(df::Vector(0, 0));
-    setPosition(df::Vector(getPosition().getX(), target_height));
+    setVelocity(df::Vector(0, 11));
+
+    df::Vector highest_obj_pos = GC.getHighestObject()->getPosition();
+
+    //setPosition(df::Vector(highest_obj_pos.getX() + getCrateSize().getX(), highest_obj_pos.getY() + getCrateSize().getY()));
+    setPosition(df::Vector());
     m_status = STACKED;
 
     // Send Stack Event.

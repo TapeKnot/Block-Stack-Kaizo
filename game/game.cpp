@@ -42,6 +42,7 @@ int loadResources() {
         RM.loadSprite("sprites/prize-car-spr.txt", "prize-car") == 0 &&
         RM.loadSprite("sprites/prize-liberty-spr.txt", "prize-liberty") == 0 &&
         RM.loadSprite("sprites/prize-cool-spr.txt", "prize-cool") == 0 &&
+        RM.loadSprite("sprites/warning-spr.txt", "warning") == 0 &&
         RM.loadSound("sounds/crate-drop.wav", "crate-drop") == 0 &&
         RM.loadSound("sounds/crate-stack.wav", "crate-stack") == 0 &&
         RM.loadSound("sounds/crate-explode.wav", "crate-explode") == 0 &&

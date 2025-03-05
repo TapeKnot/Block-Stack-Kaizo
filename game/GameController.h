@@ -7,8 +7,10 @@
 #include "HighestPoint.h"
 #include "Points.h"
 #include "Music.h"
+#include "Warning.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
+const float STACK_HEIGHT_WARNING = 5.0; // Stack height to show warning text.
 
 class GameController : public df::Object {
 private:
@@ -25,6 +27,7 @@ private:
     HighestPoint* m_p_highest_point;
     Points* m_p_points;
     df::Music* m_p_music;
+    Warning* m_p_warning;
 
 public:
     // Get the singleton instance of the GameManager.

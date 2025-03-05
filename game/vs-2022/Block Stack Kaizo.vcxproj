@@ -55,6 +55,7 @@
     <ClCompile Include="..\Points.cpp" />
     <ClCompile Include="..\PrizeScreen.cpp" />
     <ClCompile Include="..\TowerBase.cpp" />
+    <ClCompile Include="..\Warning.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Crate.h" />
@@ -94,6 +95,7 @@
     <ClInclude Include="..\Points.h" />
     <ClInclude Include="..\PrizeScreen.h" />
     <ClInclude Include="..\TowerBase.h" />
+    <ClInclude Include="..\Warning.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
