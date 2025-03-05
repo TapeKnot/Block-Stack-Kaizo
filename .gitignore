@@ -34,6 +34,6 @@
 # Libraries and game files
 game/game
 dragonfly
-.vs
 game/Makefile
 game/dragonfly.log
+.vscode
