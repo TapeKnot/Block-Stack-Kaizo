@@ -1,5 +1,7 @@
-﻿  GameController.cpp
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(33,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(42,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\GameController.cpp(86,39): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+﻿  Crate.cpp
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(18,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(27,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(26,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(35,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(71,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Block Stack Kaizo.vcxproj -> C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\vs-2022\x64\Debug\Block Stack Kaizo.exe
