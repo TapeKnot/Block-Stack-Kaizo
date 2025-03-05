@@ -7,6 +7,7 @@
 #include "HighestPoint.h"
 #include "Points.h"
 #include "Music.h"
+#include "Modifier.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
 
@@ -20,11 +21,13 @@ private:
     float m_stack_position;
     float m_scroll_speed;
     bool m_fast_scroll_mode;
+    int m_total_stacked;
     df::Object *m_p_tower_base;
     df::Object* m_p_highest_obj;
     HighestPoint* m_p_highest_point;
     Points* m_p_points;
     df::Music* m_p_music;
+    Modifier* m_p_modifier;
 
 public:
     // Get the singleton instance of the GameManager.
@@ -36,6 +39,9 @@ public:
     void increaseStackHeight(float delta);
     float getScrollSpeed() const;
     void setScrollSpeed(float new_speed);
+    bool getFastScrollMode() const;
+    Modifier *getModifier() const;
+    void setModifier(Modifier *new_modifier);
     df::Object* getHighestObject() const;
     void setHighestObject(df::Object* new_obj);
     void successfulDrop(float new_stack_position);

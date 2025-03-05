@@ -16,6 +16,8 @@ private:
     df::Vector m_crate_size;
     Status m_status;
     float m_target_height;
+    float m_progress;
+    float m_progress_speed;
 public:
     Crate();
     df::Vector getCrateSize() const;

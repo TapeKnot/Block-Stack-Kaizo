@@ -7,6 +7,7 @@
 #include "TowerBase.h"
 #include "HighestPoint.h"
 #include "GameEnd.h"
+#include "BackgroundObject.h"
 
 // Constructor
 GameController::GameController() {
@@ -21,6 +22,9 @@ GameController::GameController() {
     m_p_highest_obj = nullptr;
     m_p_highest_point = nullptr;
     m_p_points = nullptr;
+
+    // Initialize modifier
+    m_p_modifier = nullptr;
 }
 
 GameController& GameController::getInstance() {
@@ -30,13 +34,14 @@ GameController& GameController::getInstance() {
 
 // Reset game state
 void GameController::reset() {
-
     // Reset stack height and position
     m_stack_height = INITIAL_STACK_HEIGHT;
     m_stack_position = DM.getHorizontal()/2;
+    m_total_stacked = 0;
 
     // Reset scroll speed
     m_scroll_speed = 0.0;
+    m_fast_scroll_mode = false;
 
     // Reset tower base
     m_p_tower_base = new TowerBase;
@@ -49,7 +54,8 @@ void GameController::reset() {
     m_p_music = RM.getMusic("game-music");
     if (m_p_music) m_p_music->play();
 
-    //m_p_highest_point = new HighestPoint();
+    // Reset modifier
+    m_p_modifier = nullptr;
 
     // Spawn crate
     new Crate();
@@ -79,6 +85,18 @@ void GameController::setScrollSpeed(float new_speed) {
     m_scroll_speed = new_speed;
 }
 
+bool GameController::getFastScrollMode() const {
+    return m_fast_scroll_mode;
+}
+
+Modifier* GameController::getModifier() const {
+    return m_p_modifier;
+}
+
+void GameController::setModifier(Modifier* new_modifier) {
+    m_p_modifier = new_modifier;
+}
+
 df::Object* GameController::getHighestObject() const {
     return m_p_highest_obj;
 }
@@ -91,7 +109,17 @@ void GameController::setHighestObject(df::Object* new_obj) {
 void GameController::successfulDrop(float new_stack_position) {
     m_stack_position = new_stack_position;
     m_stack_height += 4;
-    m_scroll_speed += (m_scroll_speed == 0) ? 0.02 : 0.005;
+    m_scroll_speed += (m_scroll_speed == 0) ? 0.04 : 0.0005;
+    m_total_stacked++;
+
+    // 1-in-5 chance to spawn a modifier
+    if (m_total_stacked >= 10 && m_p_modifier == nullptr && rand() % 5 == 0) {
+        // Randomly select a modifier type and lifespan
+        ModifierType mod_type = static_cast<ModifierType>(rand() % 3);
+        int mod_lifespan = rand() % 300 + 150;
+        m_p_modifier = new Modifier(mod_type, mod_lifespan);
+    }
+
 
     new Crate();
 }
@@ -106,10 +134,7 @@ void GameController::endGame() {
 int GameController::eventHandler(const df::Event *p_e) {
     // Handle step events
     if (p_e->getType() == df::STEP_EVENT) {
-        //printf("stack height: %f\n", m_stack_height);
         m_stack_height -= m_scroll_speed;
-
-        //printf("Fast Mode: %d\n", m_fast_scroll_mode);
 
         if (m_p_highest_obj->getPosition().getY() <= DM.getVertical() / 2 && m_fast_scroll_mode == false) {
             m_scroll_speed *= 4;
@@ -118,6 +143,19 @@ int GameController::eventHandler(const df::Event *p_e) {
         else if (m_p_highest_obj->getPosition().getY() > DM.getVertical() / 2 && m_fast_scroll_mode == true) {
             m_scroll_speed /= 4;
             m_fast_scroll_mode = false;
+        }
+
+        if (rand() % 50 == 0) {
+            if (m_total_stacked < 20) {
+                new BackgroundObject(STAR);
+            } else {
+                int rand_num = rand() % 10;
+                if (rand_num == 0) {
+                    new BackgroundObject(PLANET);
+                } else {
+                    new BackgroundObject(STAR);
+                }
+            }
         }
         
         return 1;

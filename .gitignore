@@ -36,4 +36,6 @@ game/game
 dragonfly
 game/Makefile
 game/dragonfly.log
+*.zip
 .vscode
+game/vs-2022
