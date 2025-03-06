@@ -12,6 +12,7 @@
 #include "Animation.h"
 #include "BackgroundObject.h"
 #include "Warning.h"
+#include "FastScrollBar.h"
 
 // Constructor
 GameController::GameController() {
@@ -68,6 +69,7 @@ void GameController::reset() {
     WM.onEvent(e);
 
     new Warning();
+    new FastScrollBar();
 
     // Spawn crate
     new Crate();
