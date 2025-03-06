@@ -1,46 +1,59 @@
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\vc143.pdb
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\vc143.idb
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\gamecontroller.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\game.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\crate.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\resourcemanager.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\objectlist.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\object.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\music.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\manager.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\logmanager.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\inputmanager.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\gamemanager.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\frame.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventview.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventstep.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventout.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventmouse.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventkeyboard.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventcollision.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\event.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\displaymanager.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\clock.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\box.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\animation.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\worldmanager.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\viewobject.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\vector.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\utility.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\sprite.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\sound.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\towerbase.obj
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\gamestart.obj
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\gameend.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\towerbase.obj
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\topcrateindicator.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\game.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\crate.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\gamecontroller.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\highestpoint.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventstack.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\inputmanager.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\prizescreen.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\points.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\warning.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\window.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\modifier.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\backgroundobject.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\retries.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventstart.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\fastscrollbar.obj
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\x64\debug\block stack kaizo.exe
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\x64\debug\block stack kaizo.pdb
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block stack kaizo.ilk
-c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\scenecontroller.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\animation.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\box.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\clock.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\displaymanager.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\event.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventcollision.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventkeyboard.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventmouse.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventout.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventstep.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\eventview.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\frame.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\gamemanager.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\logmanager.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\manager.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\music.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\object.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\objectlist.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\resourcemanager.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\sound.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\sprite.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\utility.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\vector.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\viewobject.obj
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\worldmanager.obj
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\cl.command.1.tlog
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\cl.items.tlog
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\cl.read.1.tlog
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\cl.write.1.tlog
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\link-cvtres.read.1.tlog
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\link-cvtres.write.1.tlog
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\link-rc.read.1.tlog
+c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\link-rc.write.1.tlog
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\link.command.1.tlog
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\link.read.1.tlog
 c:\users\ben\documents\wpi\courses\imgd\imgd 3000\projects\imgd-3000-project-3\game\vs-2022\block st.a13d1732\x64\debug\block st.a13d1732.tlog\link.secondary.1.tlog
