@@ -11,6 +11,7 @@
 #include "Animation.h"
 #include "BackgroundObject.h"
 #include "Warning.h"
+#include "FastScrollBar.h"
 
 // Constructor
 GameController::GameController() {
@@ -64,6 +65,7 @@ void GameController::reset() {
     m_p_modifier = nullptr;
 
     new Warning();
+    new FastScrollBar();
 
     // Spawn crate
     new Crate();

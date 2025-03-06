@@ -48,6 +48,7 @@
     <ClCompile Include="..\dragonfly\lib\ViewObject.cpp" />
     <ClCompile Include="..\dragonfly\lib\WorldManager.cpp" />
     <ClCompile Include="..\EventStack.cpp" />
+    <ClCompile Include="..\FastScrollBar.cpp" />
     <ClCompile Include="..\game.cpp" />
     <ClCompile Include="..\GameController.cpp" />
     <ClCompile Include="..\GameEnd.cpp" />
@@ -92,6 +93,7 @@
     <ClInclude Include="..\dragonfly\include\ViewObject.h" />
     <ClInclude Include="..\dragonfly\include\WorldManager.h" />
     <ClInclude Include="..\EventStack.h" />
+    <ClInclude Include="..\FastScrollBar.h" />
     <ClInclude Include="..\GameController.h" />
     <ClInclude Include="..\GameEnd.h" />
     <ClInclude Include="..\GameStart.h" />
