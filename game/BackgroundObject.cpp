@@ -28,8 +28,8 @@ BackgroundObject::BackgroundObject(BackgroundObjectType background_object_type) 
             newAnimation.setIndex(rand() % 3);
             newAnimation.setSlowdownCount(-1);
             setAnimation(newAnimation);
-            // Random speed modifier between 0.3 and 0.5
-            m_speed_modifier = 0.3 + static_cast<float>(rand() % 11) / 50;
+            // Random speed modifier between 0.2 and 0.3
+            m_speed_modifier = 0.2 + static_cast<float>(rand() % 11) / 100;
             break;
         }
         case PLANET: {
@@ -39,8 +39,8 @@ BackgroundObject::BackgroundObject(BackgroundObjectType background_object_type) 
             newAnimation.setIndex(rand() % 3);
             newAnimation.setSlowdownCount(-1);
             setAnimation(newAnimation);
-            // Random speed modifier between 0.1 and 0.3
-            m_speed_modifier = 0.1 + static_cast<float>(rand() % 11) / 50;
+            // Random speed modifier between 0.3 and 0.4
+            m_speed_modifier = 0.3 + static_cast<float>(rand() % 11) / 100;
             break;
         }
         default:
@@ -59,7 +59,7 @@ BackgroundObject::BackgroundObject(BackgroundObjectType background_object_type) 
 int BackgroundObject::eventHandler(const df::Event *p_e) {
     // Check if this is a step event for animation or movement
     if (p_e->getType() == df::STEP_EVENT) {
-        setVelocity(df::Vector(0, GC.getScrollSpeed() * 0.5));
+        setVelocity(df::Vector(0, GC.getScrollSpeed() * m_speed_modifier));
         return 1;  // Event handled
     }
 
