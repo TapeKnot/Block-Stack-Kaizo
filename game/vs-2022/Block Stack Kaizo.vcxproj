@@ -48,6 +48,7 @@
     <ClCompile Include="..\dragonfly\lib\ViewObject.cpp" />
     <ClCompile Include="..\dragonfly\lib\WorldManager.cpp" />
     <ClCompile Include="..\EventStack.cpp" />
+    <ClCompile Include="..\EventStart.cpp" />
     <ClCompile Include="..\game.cpp" />
     <ClCompile Include="..\GameController.cpp" />
     <ClCompile Include="..\GameEnd.cpp" />
@@ -56,6 +57,7 @@
     <ClCompile Include="..\Modifier.cpp" />
     <ClCompile Include="..\Points.cpp" />
     <ClCompile Include="..\PrizeScreen.cpp" />
+    <ClCompile Include="..\Retries.cpp" />
     <ClCompile Include="..\TowerBase.cpp" />
     <ClCompile Include="..\Warning.cpp" />
     <ClCompile Include="..\Window.cpp" />
@@ -92,6 +94,7 @@
     <ClInclude Include="..\dragonfly\include\ViewObject.h" />
     <ClInclude Include="..\dragonfly\include\WorldManager.h" />
     <ClInclude Include="..\EventStack.h" />
+    <ClInclude Include="..\EventStart.h" />
     <ClInclude Include="..\GameController.h" />
     <ClInclude Include="..\GameEnd.h" />
     <ClInclude Include="..\GameStart.h" />
@@ -99,6 +102,7 @@
     <ClInclude Include="..\Modifier.h" />
     <ClInclude Include="..\Points.h" />
     <ClInclude Include="..\PrizeScreen.h" />
+    <ClInclude Include="..\Retries.h" />
     <ClInclude Include="..\TowerBase.h" />
     <ClInclude Include="..\Warning.h" />
     <ClInclude Include="..\Window.h" />
