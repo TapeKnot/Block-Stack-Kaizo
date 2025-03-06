@@ -7,6 +7,7 @@ class GameStart : public df::ViewObject {
 
 private:
 	void start();
+	void credits();
 	df::Music* m_p_music;
 
 public:

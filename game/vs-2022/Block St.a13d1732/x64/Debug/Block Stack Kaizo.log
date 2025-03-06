@@ -1,2 +1,16 @@
-﻿  GameEnd.cpp
+﻿  Crate.cpp
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(22,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(25,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(28,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(29,56): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(30,55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(62,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(61,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(84,75): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(86,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(92,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(96,44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(103,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  game.cpp
+  Generating Code...
   Block Stack Kaizo.vcxproj -> C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\vs-2022\x64\Debug\Block Stack Kaizo.exe

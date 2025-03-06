@@ -31,7 +31,29 @@ Crate::Crate() {
     // printf("Progress Speed: %f\n", m_progress_speed);
     
     // Initialize object properties
-    setSprite("crate");
+
+    // Randomize sprite.
+    switch (rand() % 6) {
+        case 0:
+            setSprite("red-goober");
+            break;
+        case 1:
+            setSprite("green-goober");
+            break;
+        case 2:
+            setSprite("yellow-goober");
+            break;
+        case 3:
+            setSprite("blue-goober");
+            break;
+        case 4:
+            setSprite("magenta-goober");
+            break;
+        case 5:
+            setSprite("cyan-goober");
+            break;
+    }
+
     setType("Crate");
     setSolidness(df::SOFT);
 
