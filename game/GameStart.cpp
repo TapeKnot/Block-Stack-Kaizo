@@ -5,6 +5,7 @@
 #include "GameManager.h"
 #include "TowerBase.h"
 #include "Crate.h"
+#include "CreditsScreen.h"
 
 // Constructor.
 GameStart::GameStart() {
@@ -35,6 +36,9 @@ int GameStart::eventHandler(const df::Event* p_e) {
 			case df::Keyboard::ESCAPE:	// Quit
 				GM.setGameOver();
 				break;
+			case df::Keyboard::C:		// Credits
+				credits();
+				break;
 			default:	// Key is not handled
 				break;
 			}
@@ -49,6 +53,13 @@ int GameStart::eventHandler(const df::Event* p_e) {
 void GameStart::start() {
 	if (m_p_music) m_p_music->stop();
 	GC.reset();
+
+	WM.markForDelete(this);
+}
+
+void GameStart::credits() {
+	if (m_p_music) m_p_music->stop();
+	new CreditsScreen();
 
 	WM.markForDelete(this);
 }

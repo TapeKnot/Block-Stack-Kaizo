@@ -29,9 +29,15 @@ int main(int argc, char *argv[]) {
 
 int loadResources() {
     // If any of the resources fail to load, return -1, otherwise return 0.
-    return (RM.loadSprite("sprites/crate-spr.txt", "crate") == 0 &&
+    return (RM.loadSprite("sprites/red-goober-spr.txt", "red-goober") == 0 &&
+        RM.loadSprite("sprites/green-goober-spr.txt", "green-goober") == 0 &&
+        RM.loadSprite("sprites/blue-goober-spr.txt", "blue-goober") == 0 &&
+        RM.loadSprite("sprites/yellow-goober-spr.txt", "yellow-goober") == 0 &&
+        RM.loadSprite("sprites/magenta-goober-spr.txt", "magenta-goober") == 0 &&
+        RM.loadSprite("sprites/cyan-goober-spr.txt", "cyan-goober") == 0 &&
         RM.loadSprite("sprites/game-over-spr.txt", "game-over") == 0 &&
         RM.loadSprite("sprites/game-start-spr.txt", "game-start") == 0 &&
+        RM.loadSprite("sprites/credits-spr.txt", "credits") == 0 &&
         RM.loadSprite("sprites/insert-coin-spr.txt", "insert-coin") == 0 &&
         RM.loadSprite("sprites/tower-base-spr.txt", "tower-base") == 0 &&
         RM.loadSprite("sprites/highest-point-spr.txt", "highest-point") == 0 &&
