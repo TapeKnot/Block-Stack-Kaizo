@@ -29,6 +29,7 @@ private:
     Points* m_p_points;
     df::Music* m_p_music;
     Modifier* m_p_modifier;
+    ModifierType m_last_modifier_type;
     ShakeController* m_p_shake_controller;
 
 public:

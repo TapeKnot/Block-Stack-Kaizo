@@ -30,6 +30,7 @@ GameController::GameController() {
 
     // Initialize modifier
     m_p_modifier = nullptr;
+    m_last_modifier_type = WINDOW;
 
     // Initialize shake controller
     m_p_shake_controller = new ShakeController;
@@ -140,8 +141,13 @@ void GameController::successfulDrop(float new_stack_position) {
     bool force_modifier = m_total_stacked == 10;
     bool can_spawn_modifier = m_total_stacked >= 10 && m_p_modifier == nullptr;
     if (force_modifier || (can_spawn_modifier && rand() % 5 == 0)) {
-        // Randomly select a modifier type and lifespan
-        ModifierType mod_type = static_cast<ModifierType>(rand() % 3);
+        // Randomly select a modifier type different from the last one
+        ModifierType mod_type;
+        do mod_type = static_cast<ModifierType>(rand() % 3);
+        while (mod_type == m_last_modifier_type);
+        m_last_modifier_type = mod_type;
+
+        // Randomly select a lifespan between 5 and 15 seconds
         int mod_lifespan = rand() % 300 + 150;
         m_p_modifier = new Modifier(mod_type, mod_lifespan);
     }
