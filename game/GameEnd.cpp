@@ -35,6 +35,7 @@ GameEnd::~GameEnd() {
 		if (p_o->getType() == "Crate" || p_o->getType() == "TowerBase" ||
 			p_o->getType() == "HighestPoint" || p_o->getType() == "Points" ||
 			p_o->getType() == "Modifier" || p_o->getType() == "Warning" ||
+			p_o->getType() == "FastScrollBar" || p_o->getType() == "Window" ||
 			p_o->getType() == "BackgroundObject") {
 			WM.markForDelete(p_o);
 		}

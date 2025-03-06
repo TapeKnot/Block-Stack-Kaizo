@@ -8,7 +8,7 @@
 Modifier::Modifier(ModifierType type, int lifespan) {
     setModifierType(type);
     m_lifespan = lifespan;    // Initialize lifespan to 0
-    setType("modifier");
+    setType("Modifier");
     setSolidness(df::SPECTRAL);
     setAltitude(4);  // Draw above most game objects
     setValue(lifespan / 30);

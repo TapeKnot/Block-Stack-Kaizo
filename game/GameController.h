@@ -8,6 +8,7 @@
 #include "Points.h"
 #include "Music.h"
 #include "Modifier.h"
+#include "ShakeController.h"
 
 const float INITIAL_STACK_HEIGHT = 2.0;
 
@@ -18,7 +19,6 @@ private:
     void operator=(GameController const&);		// No assigning.
 
     float m_stack_height;
-    float m_stack_position;
     float m_scroll_speed;
     bool m_fast_scroll_mode;
     int m_total_stacked;
@@ -29,13 +29,13 @@ private:
     Points* m_p_points;
     df::Music* m_p_music;
     Modifier* m_p_modifier;
+    ShakeController* m_p_shake_controller;
 
 public:
     // Get the singleton instance of the GameManager.
     static GameController& getInstance();
 
     void reset();
-    float getStackPosition() const;
     float getStackHeight() const;
     void increaseStackHeight(float delta);
     float getScrollSpeed() const;

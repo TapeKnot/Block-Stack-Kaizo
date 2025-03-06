@@ -2,7 +2,7 @@
 
 #include "ViewObject.h"
 
-const float STACK_HEIGHT_WARNING = 7.0; // Stack height to show warning text.
+const float STACK_HEIGHT_WARNING = 5.0; // Stack height to show warning text.
 
 class Warning : public df::ViewObject {
 private:

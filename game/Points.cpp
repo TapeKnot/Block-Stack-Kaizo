@@ -5,6 +5,7 @@
 // Constructor.
 Points::Points() {
 	setLocation(df::BOTTOM_RIGHT);
+	setPosition(df::Vector(getPosition().getX(), getPosition().getY() - 1));
 	setViewString(POINTS_STRING);
 	setColor(df::YELLOW);
 

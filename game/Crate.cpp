@@ -27,7 +27,7 @@ Crate::Crate() {
     // Initialize progress speed based on scroll speed
     float adjusted_scroll_speed = GC.getScrollSpeed() / (GC.getFastScrollMode() ? 4.0 : 1.0);
     if (adjusted_scroll_speed == 0) m_progress_speed = 0.010;
-    else m_progress_speed = adjusted_scroll_speed / 1.5 - 0.015;
+    else m_progress_speed = adjusted_scroll_speed / 2 - 0.010;
     // printf("Progress Speed: %f\n", m_progress_speed);
     
     // Initialize object properties

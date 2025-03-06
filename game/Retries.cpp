@@ -5,6 +5,7 @@
 // Constructor.
 Retries::Retries() {
 	setLocation(df::BOTTOM_LEFT);
+	setPosition(df::Vector(getPosition().getX(), getPosition().getY() - 1));
 	setViewString(RETRIES_STRING);
 	setColor(df::GREEN);
 

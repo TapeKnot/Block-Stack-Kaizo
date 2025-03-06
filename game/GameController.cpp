@@ -18,7 +18,6 @@
 GameController::GameController() {
     // Initialize member variables
     m_stack_height = 0.0f;
-    m_stack_position = 0.0f;
     m_scroll_speed = 0.0f; // Example speed
     m_fast_scroll_mode = false;
     m_game_ended = false;
@@ -31,6 +30,9 @@ GameController::GameController() {
 
     // Initialize modifier
     m_p_modifier = nullptr;
+
+    // Initialize shake controller
+    m_p_shake_controller = new ShakeController;
 }
 
 GameController& GameController::getInstance() {
@@ -43,7 +45,6 @@ void GameController::reset() {
 
     // Reset stack height and position
     m_stack_height = INITIAL_STACK_HEIGHT;
-    m_stack_position = DM.getHorizontal()/2;
     m_total_stacked = 0;
 
     // Reset scroll speed
@@ -73,11 +74,6 @@ void GameController::reset() {
 
     // Spawn crate
     new Crate();
-}
-
-// Get stack position method
-float GameController::getStackPosition() const {
-    return m_stack_position;
 }
 
 // Get stack height method
@@ -136,29 +132,36 @@ void GameController::setHighestObject(df::Object* new_obj) {
 
 // Successful drop method
 void GameController::successfulDrop(float new_stack_position) {
-    m_stack_position = new_stack_position;
     m_stack_height += 4;
-    m_scroll_speed += (m_scroll_speed == 0) ? 0.04 : 0.0005;
+    m_scroll_speed += (m_scroll_speed == 0) ? 0.05 : 0.001;
     m_total_stacked++;
 
-    // 1-in-5 chance to spawn a modifier
-    if (m_total_stacked >= 10 && m_p_modifier == nullptr && rand() % 5 == 0) {
+    // 1-in-5 chance to spawn a modifier, or force spawn if 10 stacked
+    bool force_modifier = m_total_stacked == 10;
+    bool can_spawn_modifier = m_total_stacked >= 10 && m_p_modifier == nullptr;
+    if (force_modifier || (can_spawn_modifier && rand() % 5 == 0)) {
         // Randomly select a modifier type and lifespan
         ModifierType mod_type = static_cast<ModifierType>(rand() % 3);
         int mod_lifespan = rand() % 300 + 150;
         m_p_modifier = new Modifier(mod_type, mod_lifespan);
     }
 
-    m_scroll_speed += (m_scroll_speed == 0) ? 0.02 : 0.005;
+    // Shake screen
+    m_p_shake_controller->shake(VERTICAL, 0.3, 0.8);
 
+    // Spawn new crate
     new Crate();
 }
 
 void GameController::endGame() {
+    // Stop music
     if (m_p_music) m_p_music->stop();
 
-    m_game_ended = true;
+    // Shake screen
+    m_p_shake_controller->shake(HORIZONTAL, 1, 0.9);
 
+    // End game
+    m_game_ended = true;
     new GameEnd(m_p_points->getValue());
 }
 
