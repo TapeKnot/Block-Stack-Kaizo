@@ -11,6 +11,16 @@ C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\g
 C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(92,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(96,44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Crate.cpp(103,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  CreditsScreen.cpp
+  FastScrollBar.cpp
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\FastScrollBar.cpp(19,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\FastScrollBar.cpp(19,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameStart.cpp
+  PrizeScreen.cpp
+  Warning.cpp
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Warning.cpp(23,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\Warning.cpp(23,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   game.cpp
   Generating Code...
+  LINK : C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\vs-2022\x64\Debug\Block Stack Kaizo.exe not found or not built by the last incremental link; performing full link
   Block Stack Kaizo.vcxproj -> C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\vs-2022\x64\Debug\Block Stack Kaizo.exe
