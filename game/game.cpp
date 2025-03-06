@@ -5,6 +5,7 @@
 
 // Game includes.
 #include "GameStart.h"
+#include "Retries.h"
 
 int loadResources();
 
@@ -18,6 +19,7 @@ int main(int argc, char *argv[]) {
     //new SceneController();
 
     new GameStart;
+    new Retries;
 
     GM.run();
 

@@ -5,6 +5,7 @@
 #include "Crate.h"
 #include "EventStep.h"
 #include "EventStack.h"
+#include "EventStart.h"
 #include "TowerBase.h"
 #include "HighestPoint.h"
 #include "GameEnd.h"
@@ -63,6 +64,9 @@ void GameController::reset() {
 
     // Reset modifier
     m_p_modifier = nullptr;
+
+    EventStart* e = new EventStart();
+    WM.onEvent(e);
 
     new Warning();
     new FastScrollBar();
