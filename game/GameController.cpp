@@ -13,6 +13,8 @@
 #include "BackgroundObject.h"
 #include "Warning.h"
 #include "FastScrollBar.h"
+#include "EventKeyboard.h"
+#include "GameManager.h"
 
 // Constructor
 GameController::GameController() {
@@ -216,6 +218,21 @@ int GameController::eventHandler(const df::Event *p_e) {
 
         successfulDrop(pos);
 
+        return 1;
+    }
+
+    else if (p_e->getType() == df::KEYBOARD_EVENT) {
+        df::EventKeyboard* p_keyboard_event = (df::EventKeyboard*)p_e;
+
+        if (p_keyboard_event->getKeyboardAction() == df::KEY_RELEASED) {
+            switch (p_keyboard_event->getKey()) {
+            case df::Keyboard::ESCAPE:	// Quit
+                GM.setGameOver();
+                break;
+            default:	// Key is not handled
+                break;
+            }
+        }
         return 1;
     }
 
