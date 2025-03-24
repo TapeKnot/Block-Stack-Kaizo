@@ -11,3 +11,8 @@ First, make sure your install of Visual Studio has "Windows 11 SDK (10.0.22621.0
 Next, extract the contents of the zipped folder "SFML-3.0" to the same directory.
 
 Finally, open the project solution in Visual Studio and build the game. Run the game from Visual Studio (game.cpp will run the "main" function that loads the game).
+
+
+
+The final game executable (with cleaned up files) can be found below:
+https://tapeknot.itch.io/bippits
