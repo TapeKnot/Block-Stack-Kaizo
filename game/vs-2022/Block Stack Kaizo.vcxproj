@@ -173,8 +173,8 @@
     <LibraryPath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\lib;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\include;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\include</IncludePath>
-    <LibraryPath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\lib;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\SFML-3.0\include;..\dragonfly\include</IncludePath>
+    <LibraryPath>..\..\SFML-3.0\lib;..\dragonfly\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\SFML-3.0\include;C:\Users\Ben\Documents\WPI\Courses\IMGD\IMGD 3000\Projects\IMGD-3000-Project-3\game\dragonfly\include</IncludePath>

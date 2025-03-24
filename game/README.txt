@@ -6,4 +6,7 @@ Files: All files for Bippits can be found in the source directory. All engine fi
 
 Code Structure: game.cpp starts and stops the game. The "dragonfly" folder contains the header and source files for the engine.
 
-How to Compile: Open the project solution in Visual Studio and build the game. Run the game from Visual Studio (game.cpp will run the "main" function that loads the game).
+How to Compile:
+First, make sure your install of Visual Studio has "Windows 11 SDK (10.0.22621.0)" installed.
+
+Next, open the project solution in Visual Studio and build the game. Run the game from Visual Studio (game.cpp will run the "main" function that loads the game).
